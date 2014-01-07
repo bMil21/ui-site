@@ -1,0 +1,10 @@
+@charset "UTF-8";
+
+/*-- MULTI-ITEM SLIDER --*/
+.multi-slider{position:relative;overflow:hidden;}
+.multi-slider .slides{overflow:hidden;padding:0;position:relative;width:1000%;}
+.multi-slider .slides > li{display:block;float:left;padding:0 20px 0 0;}
+.multi-slider .slides img{max-width:100%;height:auto;}
+.multi-slider .dir-nav{text-align:center;margin:0;}
+.multi-slider .dir-link{display:inline-block;padding:8px 14px;margin:0;background:#5eb8e2;color:#fff;cursor:pointer;position:absolute;top:40%;left:0;z-index:20;}
+.multi-slider .next{left:auto;right:0;}

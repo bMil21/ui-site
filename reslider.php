@@ -1,0 +1,32 @@
+<?php 
+// reSLIDER Page
+
+// page vars
+$page_meta = array(
+    "title" => "reSlider | UI Site",
+    "keywords" => "",
+    "description" => ""
+);
+$body_class = array(
+    "page" => "pg_reslider",
+    "site_section" => "sct_reslider",
+    "layout" => ""
+);
+// load page styles/scripts
+$css = '<link type="text/css" rel="stylesheet" href="components/reslider/reslider.css" />';
+$scripts = '<script type="text/javascript" src="components/reslider/reslider.min.js"></script>';
+
+include("includes/header.php");
+?>
+    <div class="wrap">
+		<div class="zip"><a href="components/reslider/reslider.zip" title="Download Files">Download Files</a></div> 
+		<h1 class="sect-title">reSlider</h1>
+
+		<?php 
+		include("components/reslider/reslider.php");
+		?>
+
+    </div>
+<?php 
+include("includes/footer.php");
+?>
