@@ -63,7 +63,7 @@ input:focus, textarea:focus{background:#dfdfdf;}
 .clearfix{zoom:1;} /* ie6/ie7 */
 
 /*------- HELPER CLASSES -------*/
-.wrap{width:90%;margin:0 auto;max-width:1110px;}
+.wrap{width:92%;margin:0 auto;max-width:1110px;}
 .last{margin-right:0 !important;}
 
 /*------- NAV -------*/

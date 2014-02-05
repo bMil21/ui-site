@@ -14,7 +14,18 @@
   #1 Overview
 -----------------------------------------------
 
-- UI Site v1.0.1
+- To Do
+  + Add ReadMe/Options for each plugin explaining plugin
+  + Reslider (#3)
+  + multiSlider Diff. color images
+  + Canvas animation
+  + Twitter Feed
+  + Excerpt Layout
+  + Tabs
+  + InstaFeed: video functionality
+    - http://mashable.com/2013/06/20/instagram-video-embed/
+
+- UI Site v1.0.2
   Copyright (c) 2013 Brandon Miller
   Dual licensed under the MIT and GPL licenses:
   http://www.opensource.org/licenses/mit-license.php

@@ -253,10 +253,10 @@ $(function(){
 			
 			// Init
 			init: function() {
-				$slider.wrap('<div class="reslider-inner"></div>');
 				if (slideLen < 2) return; // Don't do anything if there is only one item or no items.
 				if (settings.buildBulletNav) plugin.buildBulletNav();
 				if (settings.buildDirNav) plugin.buildDirNav();
+				$slider.wrap('<div class="reslider-inner"></div>');
 				// Start
 				plugin.animControl();
 				plugin.pauseSlider();

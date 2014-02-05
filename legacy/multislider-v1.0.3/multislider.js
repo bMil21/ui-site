@@ -7,7 +7,7 @@ $(function(){
 });
 
 /*!
-* multiSlider v1.0.5
+* multiSlider v1.0.3
 * Copyright (c) 2013 Brandon Miller
 * Dual licensed under the MIT and GPL licenses:
 * http://www.opensource.org/licenses/mit-license.php
@@ -25,8 +25,7 @@ $(function(){
 		var defaults = {
 			buildDirNav: true,
 			autoPlay: false,
-			delay: 5000,
-			minSlides: 4
+			delay: 5000
 		};
 		// Combine Defaults and Options into Settings
 		var settings = $.extend({}, defaults, options);
@@ -61,31 +60,29 @@ $(function(){
 		}
 		
 		// Directional NAV
-		function theDirNav() {
-			if (settings.buildDirNav) {
-				// Add Navigation
-				$slider.append('<div class="multi-dirnav"><span class="multi-dirlink prev">&laquo;</span> <span class="multi-dirlink next">&raquo;</span></div>');
-				var $nextBtn = $slider.find(".next"),
-					$prevBtn = $slider.find(".prev");
-				// Next Button
-				$nextBtn.on("click", function(){
-					moveNext();
-				});
-				// Previous Button
-				$prevBtn.on("click", function(){
-					if (! $slidesWrap.is(':animated')) {
-						clearTimer();
-						// remove/add and reset
-						$slide.last().prependTo($slidesWrap);
-						$slidesWrap.css({"left": "-" + slideWidth + "px"});
-						// animate
-						$slidesWrap.animate({"left": 0});
-						updateSlider();
-						// restart timer
-						theTimer();
-					}
-				});
-			}
+		if (settings.buildDirNav) {
+			// Add Navigation
+			$slider.append('<div class="multi-dirnav"><span class="multi-dirlink prev">&laquo;</span> <span class="multi-dirlink next">&raquo;</span></div>');
+			var $nextBtn = $slider.find(".next"),
+				$prevBtn = $slider.find(".prev");
+			// Next Button
+			$nextBtn.on("click", function(){
+				moveNext();
+			});
+			// Previous Button
+			$prevBtn.on("click", function(){
+				if (! $slidesWrap.is(':animated')) {
+					clearTimer();
+					// remove/add and reset
+					$slide.last().prependTo($slidesWrap);
+					$slidesWrap.css({"left": "-" + slideWidth + "px"});
+					// animate
+					$slidesWrap.animate({"left": 0});
+					updateSlider();
+					// restart timer
+					theTimer();
+				}
+			});
 		}
 		
 		// Autoplay / Delay
@@ -100,21 +97,13 @@ $(function(){
 			}
 		}
 		
-		// Window Resize: recalc widths
-		function resizeCall() {
-			$(window).resize(function() {
-				calcWidths();
-			});
-		}
+		// Window Resize: recalc widths, 
+		$(window).resize(function() {
+			calcWidths();
+		});
 
 		// Init
 		calcWidths();
-		if (slideLen < settings.minSlides) {
-			return;
-		} else {
-			theDirNav();
-			theTimer();
-			resizeCall();
-		}
+		theTimer();
 	}
 })(jQuery);

@@ -7,7 +7,7 @@ $(function(){
 });
 
 /*!
-* multiSlider v1.0.5
+* multiSlider v1.0.4
 * Copyright (c) 2013 Brandon Miller
 * Dual licensed under the MIT and GPL licenses:
 * http://www.opensource.org/licenses/mit-license.php
@@ -108,11 +108,12 @@ $(function(){
 		}
 
 		// Init
-		calcWidths();
 		if (slideLen < settings.minSlides) {
+			$slider.addClass("not-enough");
 			return;
 		} else {
 			theDirNav();
+			calcWidths();
 			theTimer();
 			resizeCall();
 		}

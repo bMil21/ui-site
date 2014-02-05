@@ -1,9 +1,9 @@
 @charset "UTF-8";
 
-/*-- multiSlider v1.0.5 --*/
+/*-- multiSlider v1.0.4 --*/
 .multi-slider{position:relative;max-width:100%;}
 .multi-inner{overflow:hidden;}
-.multi-slider .slides{overflow:hidden;padding:0;margin:0 auto;position:relative;width:1000%;}
+.multi-slider .slides{overflow:hidden;padding:0;position:relative;width:1000%;}
 .multi-slider.not-enough .slides{width:auto;}
 .multi-slider .slides > li{display:block;float:left;}
 .multi-slider .slides img{max-width:100%;height:auto;}
