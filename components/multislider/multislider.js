@@ -7,7 +7,7 @@ $(function(){
 });
 
 /*!
-* multiSlider v1.0.5
+* multiSlider v1.0.6
 * Copyright (c) 2013 Brandon Miller
 * Dual licensed under the MIT and GPL licenses:
 * http://www.opensource.org/licenses/mit-license.php
@@ -30,20 +30,23 @@ $(function(){
 		};
 		// Combine Defaults and Options into Settings
 		var settings = $.extend({}, defaults, options);
-		
+
 		// Calculate Widths
 		function calcWidths() {
-			slideWidth = $slide.outerWidth(),
-			slideWrapWidth = slideWidth * slideLen;
+			slideWidth = $slide.outerWidth();
+			var slideWrapWidth = 0;
+			$slide.each(function( index ) {
+				slideWrapWidth += parseInt($(this).width(), 10);
+			});
 			$slidesWrap.width(slideWrapWidth);
 		}
-		
+
 		// Update Slider Global (bc slides are constantly changing position)
 		function updateSlider() {
 			$slidesWrap = $slider.find(".slides")
 			$slide = $slider.find(".slide");
 		}
-		
+
 		// Default Animation
 		function moveNext() {
 			if (! $slidesWrap.is(':animated')) {
@@ -59,7 +62,7 @@ $(function(){
 				theTimer();
 			}
 		}
-		
+
 		// Directional NAV
 		function theDirNav() {
 			if (settings.buildDirNav) {
@@ -87,7 +90,7 @@ $(function(){
 				});
 			}
 		}
-		
+
 		// Autoplay / Delay
 		function theTimer(){
 			if (settings.autoPlay) {
@@ -99,7 +102,7 @@ $(function(){
 				clearTimeout(moveTimer);
 			}
 		}
-		
+
 		// Window Resize: recalc widths
 		function resizeCall() {
 			$(window).resize(function() {
