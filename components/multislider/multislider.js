@@ -7,7 +7,7 @@ $(function(){
 });
 
 /*!
-* multiSlider v1.0.6.1
+* multiSlider v1.1
 * Copyright (c) 2013 Brandon Miller
 * Dual licensed under the MIT and GPL licenses:
 * http://www.opensource.org/licenses/mit-license.php
@@ -33,8 +33,6 @@ $(function(){
 
 		// Calculate Widths
 		function calcWidths() {
-			slideWidth = $slide.eq(0).width();
-			slideWidthPrev = $slide.eq(slideLen-1).width();
 			var slideWrapWidth = 0;
 			$slide.each(function( index ) {
 				slideWrapWidth += parseInt($(this).width(), 10);
@@ -52,6 +50,8 @@ $(function(){
 		function moveNext() {
 			if (! $slidesWrap.is(':animated')) {
 				clearTimer();
+				// Grab next .slide's width
+				slideWidth = $slide.eq(0).width();
 				// animate
 				$slidesWrap.animate({"left": "-" + slideWidth + "px"}, function() {
 					// remove/add and reset
@@ -59,8 +59,6 @@ $(function(){
 					$slidesWrap.css({"left": 0});
 					updateSlider();
 				});
-				// Grab next .slide's width
-				slideWidth = $slide.eq(1).width();
 				// restart timer
 				theTimer();
 			}
