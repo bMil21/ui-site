@@ -9,7 +9,7 @@ $(function(){
 });
 
 /*!
-* reSlider v1.2.1
+* reSlider v1.3
 * Copyright (c) 2013 Brandon Miller
 * Dual licensed under the MIT and GPL licenses:
 * http://www.opensource.org/licenses/mit-license.php
@@ -38,11 +38,12 @@ $(function(){
 			animation: "fade",
 			buildBulletNav: true,
 			buildDirNav: true,
+			buildThumbNav: false,
 			autoPlay: true
 		};
 		// Combine Defaults and Options into Settings
 		var settings = $.extend({}, defaults, options);
-				
+
 		// Make overflow visible for Items that go outside box (arrows)
 		$slider.css({ "overflow": "visible" });
 
@@ -83,14 +84,41 @@ $(function(){
 				var $prev = $sliderWrap.find(".prev"),
 					$next = $sliderWrap.find(".next");
 				$prev.on("click", function(){
-					num = num - 2;
-					goToPrevious = true;
-					plugin.delayTimer("clear");
-					settings.animation();
+					if (! $slider.is(':animated')) { // prevent over clicking
+						num = num - 2;
+						goToPrevious = true;
+						plugin.delayTimer("clear");
+						settings.animation();
+					}
 				});
 				$next.on("click", function(){
-					plugin.delayTimer("clear");
-					settings.animation();
+					if (! $slider.is(':animated')) { // prevent over clicking
+						plugin.delayTimer("clear");
+						settings.animation();
+					}
+				});
+			},
+			
+			// Build Thumbnail Navigation
+			buildThumbNav: function() {
+				// html should look like.. 
+				// <div class="thumb-nav"><span class="thumb-link"><img></span></div>
+				$thumbNav = $sliderWrap.find('.thumb-nav');
+				$thumbLinks = $thumbNav.find('.thumb-link');
+				$thumbLinks.eq(0).addClass("current");
+				// click setup
+				$thumbLinks.on("click", function(){
+					var index = $(this).index();
+					// Set Current/Next Slides, reset Delay, start animation
+					$curSlide = $slider.find($(".current"));
+					$nxtSlide = $($sliderItems[index]);
+					// Don't Call if You click on the current link
+					if ($curSlide.index() !== $nxtSlide.index()) {
+						num = (index - 2);
+						bulletNavClicked = true;
+						plugin.delayTimer("clear");
+						settings.animation();
+					}
 				});
 			},
 
@@ -103,15 +131,22 @@ $(function(){
 					$(this).outerWidth(slideWidth +"%");
 				});
 			},
-
+			
+			// Order Nav
 			orderNav: function() {
 				if (animType === 'carousel') {
 					var navIndex = (num >= (slideLen-4)) ? 0 : num + 2; // Reset Index if max slide reached.. accounts for duplicate slides
 				} else {
 					var navIndex = (num >= (slideLen-2)) ? 0 : num + 2; // Reset Index if max slide reached
 				}
-				$navLinks.removeClass("current");
-				$navLinks.eq(navIndex).addClass("current");
+				if (settings.buildBulletNav) {
+					$navLinks.removeClass("current");
+					$navLinks.eq(navIndex).addClass("current");
+				}
+				if (settings.buildThumbNav) {
+					$thumbLinks.removeClass("current");
+					$thumbLinks.eq(navIndex).addClass("current");
+				}
 			},
 
 			// Stop Slider on Hover.. Start on Mouse Out
@@ -123,10 +158,10 @@ $(function(){
 					plugin.delayTimer();
 				});
 			},
-			
+
 			// Infinite Carousel (sliding)
 			carousel: function() {
-				if (settings.buildBulletNav) plugin.orderNav();
+				plugin.orderNav();
 				//if (num >= 2) num = 2; // prevent over clicking
 				num++;
 				$slider.animate({
@@ -145,10 +180,10 @@ $(function(){
 				});
 				plugin.delayTimer();
 			}, 
-			
+
 			// Slide
 			slide: function() {
-				if (settings.buildBulletNav) plugin.orderNav();
+				plugin.orderNav();
 				num++;
 				if (num === (slideLen - 1)) { // if last slide... reset
 					$slider.animate({
@@ -169,10 +204,10 @@ $(function(){
 					plugin.delayTimer();
 				}
 			},
-			
+
 			// Fade
 			fade: function() {
-				if (settings.buildBulletNav) plugin.orderNav();
+				plugin.orderNav();
 				num++;
 				// If bulletNav NOT Clicked
 				if (!bulletNavClicked) {
@@ -202,7 +237,7 @@ $(function(){
 				bulletNavClicked = false;
 				goToPrevious = false;
 			},
-			
+
 			// Animation Type
 			animControl: function() {
 				animType = settings.animation;
@@ -237,7 +272,7 @@ $(function(){
 				}
 				plugin.delayTimer();
 			},
-			
+
 			// Clear Timeout
 			clearDelay: function() {
 				clearTimeout(theDelay);
@@ -250,13 +285,14 @@ $(function(){
 					if (clear === undefined || null) theDelay = setTimeout(settings.animation, settings.delay); // Start timer unless clear was
 				}
 			}, 
-			
+
 			// Init
 			init: function() {
 				$slider.wrap('<div class="reslider-inner"></div>');
 				if (slideLen < 2) return; // Don't do anything if there is only one item or no items.
 				if (settings.buildBulletNav) plugin.buildBulletNav();
 				if (settings.buildDirNav) plugin.buildDirNav();
+				if (settings.buildThumbNav) plugin.buildThumbNav();
 				// Start
 				plugin.animControl();
 				plugin.pauseSlider();
