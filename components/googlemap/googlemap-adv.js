@@ -11,7 +11,7 @@ $(function(){
 			{ 
 				itemName: "Home",
 				itemAddress: [40.1211770, -75.4015760] 
-			}, 
+			}, 	
 			{ 
 				itemName: "Home Home",
 				itemAddress: [39.817583, -76.981294] 
@@ -24,6 +24,7 @@ $(function(){
 
 /*!
 * gMapHelper Advanced v2.0
+* https://github.com/bMil21/ui-site/tree/master/components/googlemap
 * Copyright (c) 2013 Brandon Miller
 * Dual licensed under the MIT and GPL licenses:
 * http://www.opensource.org/licenses/mit-license.php
