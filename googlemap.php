@@ -14,7 +14,7 @@ $body_class = array(
 );
 // load page styles/scripts
 $css = '<link type="text/css" rel="stylesheet" href="components/googlemap/googlemap.css" />';
-$scripts = '<script type="text/javascript" src="components/googlemap/googlemap.min.js"></script>';
+$scripts = '<script type="text/javascript" src="components/googlemap/googlemap-adv.js"></script>';
 
 include("includes/header.php");
 ?>
