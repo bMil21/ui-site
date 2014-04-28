@@ -166,10 +166,10 @@ $(function(){
 			// Start it all
 			init: function() {
 				if (typeof settings.address === "string") {
-					console.log("String!");
+					//console.log("String!");
 					plugin.myGeocoder();
 				} else if (typeof settings.address === "object") {
-					console.log("Object/Array");
+					//console.log("Object/Array");
 					plugin.buildMapMulti();
 				} else {
 					alert("Use an address (string) or an array of Lat/Lng");
