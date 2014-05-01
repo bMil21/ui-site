@@ -2,7 +2,7 @@
 $(function(){
 	
 	// Init - gMapHelper
-	$('#google-map').gMapHelper({ 
+	$('#google-map-adv').gMapHelper({ 
 		address: [
 			{ 
 				itemName: "Work",

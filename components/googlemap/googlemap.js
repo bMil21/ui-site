@@ -8,7 +8,7 @@ $(function(){
 
 
 /*!
-* gMapHelper v1.0
+* gMapHelper v1.1
 * https://github.com/bMil21/ui-site/tree/master/components/googlemap
 * Copyright (c) 2013 Brandon Miller
 * Dual licensed under the MIT and GPL licenses:
@@ -94,7 +94,19 @@ $(function(){
 				directionsDisplay.setMap(map);
 				// Display Directions List
 				directionsDisplay.setPanel(document.getElementById('dir-panel'));
+				// Add Custom Styles
+				plugin.addStyles();
 			}, 
+
+			// Add Custom Styles
+			addStyles: function() {
+				var myStyleOptions = {
+					name: 'My Map'
+				};
+				var myMapStyles = new google.maps.StyledMapType( settings.styles, myStyleOptions );
+				map.mapTypes.set('mymap', myMapStyles);
+				map.setMapTypeId('mymap');
+			},
 			
 			// Door-to-Door
 			calcRoute: function(){
