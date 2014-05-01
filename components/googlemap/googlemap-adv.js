@@ -2,6 +2,13 @@
 $(function(){
 	
 	// Init - gMapHelper
+	$('#google-map').gMapHelper({ 
+		address:"1100 Hector Street, Conshohocken, PA 19403",
+		// Styles Pulled from... http://snazzymaps.com/style/82/grass-is-greener-water-is-bluer
+		styles: [{"stylers":[{"saturation":-100}]},{"featureType":"water","elementType":"geometry.fill","stylers":[{"color":"#0099dd"}]},{"elementType":"labels","stylers":[{"visibility":"off"}]},{"featureType":"poi.park","elementType":"geometry.fill","stylers":[{"color":"#aadd55"}]},{"featureType":"road.highway","elementType":"labels","stylers":[{"visibility":"on"}]},{"featureType":"road.arterial","elementType":"labels.text","stylers":[{"visibility":"on"}]},{"featureType":"road.local","elementType":"labels.text","stylers":[{"visibility":"on"}]},{}]
+	});
+
+	// Init - gMapHelper
 	$('#google-map-adv').gMapHelper({ 
 		address: [
 			{ 
@@ -17,8 +24,8 @@ $(function(){
 				itemAddress: [39.817583, -76.981294] 
 			}
 		],
-		// Styles Pulled from... http://snazzymaps.com/style/36/flat-green
-		styles: [{"featureType":"administrative","stylers":[{"visibility":"off"}]},{"featureType":"poi","stylers":[{"visibility":"simplified"}]},{"featureType":"road","elementType":"labels","stylers":[{"visibility":"simplified"}]},{"featureType":"water","stylers":[{"visibility":"simplified"}]},{"featureType":"transit","stylers":[{"visibility":"simplified"}]},{"featureType":"landscape","stylers":[{"visibility":"simplified"}]},{"featureType":"road.highway","stylers":[{"visibility":"off"}]},{"featureType":"road.local","stylers":[{"visibility":"on"}]},{"featureType":"road.highway","elementType":"geometry","stylers":[{"visibility":"on"}]},{"featureType":"water","stylers":[{"color":"#84afa3"},{"lightness":52}]},{"stylers":[{"saturation":-17},{"gamma":0.36}]},{"featureType":"transit.line","elementType":"geometry","stylers":[{"color":"#3f518c"}]}]
+		// Styles Pulled from... http://snazzymaps.com/style/82/grass-is-greener-water-is-bluer
+		styles: [{"stylers":[{"saturation":-100}]},{"featureType":"water","elementType":"geometry.fill","stylers":[{"color":"#0099dd"}]},{"elementType":"labels","stylers":[{"visibility":"off"}]},{"featureType":"poi.park","elementType":"geometry.fill","stylers":[{"color":"#aadd55"}]},{"featureType":"road.highway","elementType":"labels","stylers":[{"visibility":"on"}]},{"featureType":"road.arterial","elementType":"labels.text","stylers":[{"visibility":"on"}]},{"featureType":"road.local","elementType":"labels.text","stylers":[{"visibility":"on"}]},{}]
 	});
 	
 });
@@ -105,7 +112,7 @@ $(function(){
 				marker = new google.maps.Marker({
 					position: settings.address,
 					map: map,
-					title: 'Cleos Bar',
+					title: 'Location Name',
 					icon: settings.icon
 				});
 				// Display Directions on Map

@@ -2,7 +2,11 @@
 $(function(){
 	
 	// Init - gMapHelper
-	$('#google-map').gMapHelper({ address:"1100 Hector Street, Conshohocken, PA 19403" });
+	$('#google-map').gMapHelper({ 
+		address:"1100 Hector Street, Conshohocken, PA 19403",
+		// Styles Pulled from... http://snazzymaps.com/style/82/grass-is-greener-water-is-bluer
+		styles: [{"stylers":[{"saturation":-100}]},{"featureType":"water","elementType":"geometry.fill","stylers":[{"color":"#0099dd"}]},{"elementType":"labels","stylers":[{"visibility":"off"}]},{"featureType":"poi.park","elementType":"geometry.fill","stylers":[{"color":"#aadd55"}]},{"featureType":"road.highway","elementType":"labels","stylers":[{"visibility":"on"}]},{"featureType":"road.arterial","elementType":"labels.text","stylers":[{"visibility":"on"}]},{"featureType":"road.local","elementType":"labels.text","stylers":[{"visibility":"on"}]},{}]
+	});
 	
 });
 
@@ -87,7 +91,7 @@ $(function(){
 				marker = new google.maps.Marker({
 					position: settings.address,
 					map: map,
-					title: 'Cleos Bar',
+					title: 'Location Name',
 					icon: settings.icon
 				});
 				// Display Directions on Map

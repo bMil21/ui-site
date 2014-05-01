@@ -8,6 +8,10 @@
 <div id="dir-panel"></div>
 <!-- END Google Map -->
 
+<br>
+<hr>
+<br>
+
 <!-- Google Map -->
 <h2 class="sect-title">Google Map Helper - Multiple Locations</h2>
 <div id="google-map-adv"></div>
