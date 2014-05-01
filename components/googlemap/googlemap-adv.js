@@ -16,14 +16,16 @@ $(function(){
 				itemName: "Home Home",
 				itemAddress: [39.817583, -76.981294] 
 			}
-		]
+		],
+		// Styles Pulled from... http://snazzymaps.com/style/36/flat-green
+		styles: [{"featureType":"administrative","stylers":[{"visibility":"off"}]},{"featureType":"poi","stylers":[{"visibility":"simplified"}]},{"featureType":"road","elementType":"labels","stylers":[{"visibility":"simplified"}]},{"featureType":"water","stylers":[{"visibility":"simplified"}]},{"featureType":"transit","stylers":[{"visibility":"simplified"}]},{"featureType":"landscape","stylers":[{"visibility":"simplified"}]},{"featureType":"road.highway","stylers":[{"visibility":"off"}]},{"featureType":"road.local","stylers":[{"visibility":"on"}]},{"featureType":"road.highway","elementType":"geometry","stylers":[{"visibility":"on"}]},{"featureType":"water","stylers":[{"color":"#84afa3"},{"lightness":52}]},{"stylers":[{"saturation":-17},{"gamma":0.36}]},{"featureType":"transit.line","elementType":"geometry","stylers":[{"color":"#3f518c"}]}]
 	});
 	
 });
 
 
 /*!
-* gMapHelper Advanced v2.0
+* gMapHelper Advanced v2.1
 * https://github.com/bMil21/ui-site/tree/master/components/googlemap
 * Copyright (c) 2013 Brandon Miller
 * Dual licensed under the MIT and GPL licenses:
@@ -45,7 +47,8 @@ $(function(){
 			scrollwheel: false,
 			zoom: 14, 
 			address: "",
-			mapType: "roadmap"
+			mapType: "roadmap",
+			styles: false
 		};
 		// Combine Defaults and Options into Settings
 		var settings = $.extend({}, defaults, options);
@@ -109,6 +112,8 @@ $(function(){
 				directionsDisplay.setMap(map);
 				// Display Directions List
 				directionsDisplay.setPanel(document.getElementById('dir-panel'));
+				// Add Custom Styles
+				plugin.addStyles();
 			}, 
 			
 			// Build Map with Settings
@@ -142,7 +147,19 @@ $(function(){
 				directionsDisplay.setMap(map);
 				// Display Directions List
 				directionsDisplay.setPanel(document.getElementById('dir-panel'));
+				// Add Custom Styles
+				plugin.addStyles();
 			}, 
+
+			// Add Custom Styles
+			addStyles: function() {
+				var myStyleOptions = {
+					name: 'My Map'
+				};
+				var myMapStyles = new google.maps.StyledMapType( settings.styles, myStyleOptions );
+				map.mapTypes.set('mymap', myMapStyles);
+				map.setMapTypeId('mymap');
+			},
 			
 			// Door-to-Door (Single Address Only)
 			calcRoute: function(){
