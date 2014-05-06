@@ -27,6 +27,14 @@ include("includes/header.php");
 		?>
 
     </div>
+    <!-- Plugin Settings -->
+    <div class="settings-area">
+        <div class="wrap clearfix">
+            <?php 
+            include("settings/reslider/index.php");
+            ?>
+        </div>
+    </div>
 <?php 
 include("includes/footer.php");
 ?>

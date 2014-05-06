@@ -27,6 +27,7 @@ include("includes/header.php");
 		?>
 
 	</div>
+	<!-- Plugin Settings -->
 	<div class="settings-area">
 		<div class="wrap clearfix">
 			<?php 
