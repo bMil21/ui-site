@@ -3,6 +3,8 @@ ui-site
 
 Site displaying various common UI Features.
 
+Demo Site: http://bmmdesign.com/ui-site/
+
 -----------------------------------------------
   UI Site - READ ME
 -----------------------------------------------
