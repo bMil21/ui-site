@@ -1,0 +1,14 @@
+/*------- Equal Heights -------*/
+.eqh-wrap{}
+.eqh {float:left; width:23%; margin:10px 1%; padding:30px 3%; background:#E9F18B; box-shadow:inset 0 0 0 5px #E0E781;}
+
+/* Responsive Styles */
+@media screen and (max-width: 1000px) {
+	.eqh {width:31.3%;}
+}
+@media screen and (max-width: 800px) {
+	.eqh {width:48%;}
+}
+@media screen and (max-width: 600px) {
+	.eqh {width:auto; float:none; margin:10px 0;}
+}

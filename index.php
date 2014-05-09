@@ -26,6 +26,7 @@ include("includes/header.php");
         <div class="cta-col"><a class="cta" href="gallery.php" title="View Plugin"><span>Gallery</span></a></div>
         <div class="cta-col"><a class="cta" href="multislider.php" title="View Plugin"><span>Multi-Slider</span></a></div>
         <div class="cta-col"><a class="cta" href="googlemap.php" title="View Plugin"><span>Google Map Helper</span></a></div>
+        <div class="cta-col"><a class="cta" href="equalheights.php" title="View Plugin"><span>Equal Heights</span></a></div>
 
     </div>
 <?php 
