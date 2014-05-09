@@ -1,18 +1,11 @@
-ui-site
+UI Site
 =======
-
 Site displaying various common UI Features.
 
-
-  Demo Site:
-===============================================
-
+##Demo Site:
 - http://bmmdesign.com/ui-site/
 
-
-  Overview
-===============================================
-
+##Overview
 - UI Site v1.0.1
   Copyright (c) 2013 Brandon Miller
   Dual licensed under the MIT and GPL licenses:
