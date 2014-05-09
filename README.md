@@ -4,11 +4,14 @@ ui-site
 Site displaying various common UI Features.
 
 
-  Demo Site: http://bmmdesign.com/ui-site/
------------------------------------------------
+  Demo Site:
+===============================================
+
+- http://bmmdesign.com/ui-site/
+
 
   Overview
------------------------------------------------
+===============================================
 
 - UI Site v1.0.1
   Copyright (c) 2013 Brandon Miller
