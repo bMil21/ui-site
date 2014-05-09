@@ -1,5 +1,5 @@
 			<!-- Usage -->
-			<section class="sett-usage">
+			<section class="sett-usage sett-sect">
 				<h2 class="settings-title">HTML</h2>
 				<pre class="mycode"><code>
 &lt;!-- reSlider --&gt;
@@ -15,7 +15,7 @@
 			</section>
 
 			<!-- CSS -->
-			<section class="sett-css">
+			<section class="sett-css sett-sect">
 				<h2 class="settings-title">Default CSS</h2>
 				<pre class="mycode"><code>
 /*------- reSLIDER -------*/
@@ -50,7 +50,7 @@
 			</section>
 
 			<!-- jQuery & plugin -->
-			<section class="sett-plugin">
+			<section class="sett-plugin sett-sect">
 				<h2 class="settings-title">Add jQuery &amp; Plugin</h2>
 				<pre class="mycode"><code>
 &lt;script src=&quot;js/libs/jquery.js&quot;&gt;&lt;/script&gt;
@@ -59,7 +59,7 @@
 			</section>
 
 			<!-- Init -->
-			<section class="sett-init">
+			<section class="sett-init sett-sect">
 				<h2 class="settings-title">Initialize Plugin</h2>
 				<pre class="mycode"><code>
 $(function(){
@@ -72,7 +72,7 @@ $(function(){
 			</section>
 
 			<!-- Options -->
-			<section class="sett-options">
+			<section class="sett-options sett-sect">
 				<h2 class="settings-title">Options</h2>
 				<pre class="mycode"><code>
 $('#slider1').reSlider({
