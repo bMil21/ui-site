@@ -167,8 +167,6 @@ $(function(){
 					// Click event for Marker, Info Window
 					google.maps.event.addListener(marker, 'click', function(settings, i) {
 						return function() {
-							console.log(this);
-							console.log(i);
 							var curInfoWindow = settings.address[i].itemInfoWindow;
 							infowindow.setContent(curInfoWindow);
 							infowindow.open(map, this);
