@@ -13,15 +13,26 @@ $(function(){
 		address: [
 			{ 
 				itemName: "Work",
-				itemAddress: [40.075210, -75.288226] 
+				itemAddress: [40.075210, -75.288226],
+				itemInfoWindow: '<div class="info-window">' +
+						'<h2>Visit Work</h2>' +
+						'<p>1100 Hector Street</p>' +
+						'<p>Conshohocken, PA 19428</p>' +
+					'</div>'
 			}, 
 			{ 
 				itemName: "Home",
-				itemAddress: [40.1211770, -75.4015760] 
+				itemAddress: [40.1211770, -75.4015760],
+				itemInfoWindow: '<div class="info-window">' +
+						'<h2>Visit Home</h2>' +
+					'</div>'
 			}, 	
 			{ 
 				itemName: "Home Home",
-				itemAddress: [39.817583, -76.981294] 
+				itemAddress: [39.817583, -76.981294],
+				itemInfoWindow: '<div class="info-window">' +
+						'<h2>Visit Home Home</h2>' +
+					'</div>'
 			}
 		],
 		// Styles Pulled from... http://snazzymaps.com/style/82/grass-is-greener-water-is-bluer
@@ -32,7 +43,7 @@ $(function(){
 
 
 /*!
-* gMapHelper Advanced v2.1
+* gMapHelper Advanced v2.2
 * https://github.com/bMil21/ui-site/tree/master/components/googlemap
 * Copyright (c) 2013 Brandon Miller
 * Dual licensed under the MIT and GPL licenses:
@@ -47,7 +58,7 @@ $(function(){
 		var mapEl = $(this)[0], //returns a HTML DOM Object (instead of jQuery Object)
 			directionsService = new google.maps.DirectionsService(), 
 			directionsDisplay = new google.maps.DirectionsRenderer(), 
-			geocoder, myMapType, map, marker, map_options;
+			geocoder, myMapType, map, marker, map_options, infowindow;
 		// Defaults
 		var defaults = {
 			icon: "",
@@ -136,24 +147,35 @@ $(function(){
 				var bounds = new google.maps.LatLngBounds();
 				// New Map Object.. w/ element and options
 				map = new google.maps.Map(mapEl, map_options);
+				// Info Window
+				infowindow = new google.maps.InfoWindow({
+					content: "Loading..."
+				});
 				// New Marker Object
-				for (var i = 0; i < settings.address.length; i++) {
+				var i;
+				for (i = 0; i < settings.address.length; i++) {
 					var myLocation = settings.address[i].itemAddress,
 						myLatLng = new google.maps.LatLng(myLocation[0], myLocation[1]);
 					marker = new google.maps.Marker({
 						position: myLatLng,
 						map: map,
-						title: 'Cleos Bar',
+						title: settings.address[i].itemName,
 						icon: settings.icon
 					});
 					//extend the bounds to include each marker's position
 					bounds.extend(marker.position);
+					// Click event for Marker, Info Window
+					google.maps.event.addListener(marker, 'click', function(settings, i) {
+						return function() {
+							console.log(this);
+							console.log(i);
+							var curInfoWindow = settings.address[i].itemInfoWindow;
+							infowindow.setContent(curInfoWindow);
+							infowindow.open(map, this);
+						}
+					}(settings, i));
 				}
 				map.fitBounds(bounds);
-				// Display Directions on Map
-				directionsDisplay.setMap(map);
-				// Display Directions List
-				directionsDisplay.setPanel(document.getElementById('dir-panel'));
 				// Add Custom Styles
 				plugin.addStyles();
 			}, 
