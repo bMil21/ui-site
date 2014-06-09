@@ -136,9 +136,10 @@ $(function(){
 			
 			// Build Map with Settings
 			buildMapMulti: function() {
+				var firstAddress = settings.address[0];
 				// Set Map Options
 				var map_options = {
-				  center: new google.maps.LatLng(-33.9, 151.2),
+				  center: new google.maps.LatLng( firstAddress.itemAddress[0], firstAddress.itemAddress[1]), // Lat, Lng of 1st Address
 				  zoom: settings.zoom,
 				  scrollwheel: settings.scrollwheel,
 				  mapTypeId: plugin.mapType()
@@ -173,7 +174,9 @@ $(function(){
 						}
 					}(settings, i));
 				}
-				map.fitBounds(bounds);
+				if (settings.address.length > 1) {
+					map.fitBounds(bounds);
+				}
 				// Add Custom Styles
 				plugin.addStyles();
 			}, 
