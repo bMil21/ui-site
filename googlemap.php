@@ -19,7 +19,7 @@ $scripts = '<script type="text/javascript" src="components/googlemap/googlemap-a
 include("includes/header.php");
 ?>
     <div class="wrap clearfix">
-		<div class="zip"><a href="components/googlemap/googlemap.zip" title="Download Files">Download Files</a></div> 
+        <div class="zip"><a href="https://github.com/bMil21/ui-site/tree/master/components/googlemap" title="Download Files" target="_blank">Download Files</a></div> 
 		<h1 class="sect-title">Google Map Helper</h1>
 
 		<?php 

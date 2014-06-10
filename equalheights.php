@@ -19,7 +19,7 @@ $scripts = '<script type="text/javascript" src="components/equalheights/equalhei
 include("includes/header.php");
 ?>
 	<div class="wrap">
-		<div class="zip"><a href="components/equalheights/equalheights.zip" title="Download Files">Download Files</a></div> 
+		<div class="zip"><a href="https://github.com/bMil21/ui-site/tree/master/components/equalheights" title="Download Files" target="_blank">Download Files</a></div> 
 		<h1 class="sect-title">Equal Heights</h1>
 
 		<?php 
