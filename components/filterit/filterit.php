@@ -8,36 +8,43 @@
 		<div id="filterit" class="filter-wrap clearfix">
 			<div class="filter-item food">
 				<div class="filter-inner">
+					<img src="images/ph-medium.png" alt="Medium" width="230" height="230">
 					<h2>Food Item 1</h2>
 				</div>
 			</div>
 			<div class="filter-item food">
 				<div class="filter-inner">
+					<img src="images/ph-medium.png" alt="Medium" width="230" height="230">
 					<h2>Food Item 2</h2>
 				</div>
 			</div>
 			<div class="filter-item drink">
 				<div class="filter-inner">
+					<img src="images/ph-medium.png" alt="Medium" width="230" height="230">
 					<h2>Drink Item 1</h2>
 				</div>
 			</div>
 			<div class="filter-item drink">
 				<div class="filter-inner">
+					<img src="images/ph-medium.png" alt="Medium" width="230" height="230">
 					<h2>Drink Item 2</h2>
 				</div>
 			</div>
 			<div class="filter-item food">
 				<div class="filter-inner">
+					<img src="images/ph-medium.png" alt="Medium" width="230" height="230">
 					<h2>Food Item 3</h2>
 				</div>
 			</div>
 			<div class="filter-item food">
 				<div class="filter-inner">
+					<img src="images/ph-medium.png" alt="Medium" width="230" height="230">
 					<h2>Food Item 4</h2>
 				</div>
 			</div>
 			<div class="filter-item drink">
 				<div class="filter-inner">
+					<img src="images/ph-medium.png" alt="Medium" width="230" height="230">
 					<h2>Drink Item 3</h2>
 				</div>
 			</div>

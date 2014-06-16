@@ -20,11 +20,21 @@ $(function(){
 		var $container = $(this),
 			$filterBtn = $(".filter"),
 			$filterItem = $(".filter-item"),
-			fItemWidth = $filterItem.eq(0).width(),
-			fItemHeight = $filterItem.eq(0).height();
+			fItemWidth = $filterItem.eq(0).outerWidth(),
+			fItemHeight = $filterItem.eq(0).outerHeight();
 
 		// Initial Setup
 		$filterItem.addClass("all active");
+		function setDimensions(){
+			$filterItem.each(function(){
+				var $this = $(this),
+					setW = $this.width(),
+					setH = $this.height();
+				$this.data("width", setW);
+				$this.data("height", setH);
+			});
+		}
+		setDimensions();
 
 		// Transition Support
 		function getSupportedTransition() {
@@ -60,9 +70,12 @@ $(function(){
 						"height": "0px"
 					});
 					// Animate IN
-					$category.css({
-						width: fItemWidth + "px",
-						height: fItemHeight + "px"
+					$category.each(function(){
+						var $this = $(this);
+						$this.css({
+							width: $this.data("width") + "px",
+							height: $this.data("height") + "px"
+						});
 					});
 					$category.addClass("active").removeClass("not-active");
 				}, 500);
