@@ -14,7 +14,8 @@ $body_class = array(
 );
 // load page styles/scripts
 $css = '<link type="text/css" rel="stylesheet" href="components/gallery/gallery.css" />';
-$scripts = '<script type="text/javascript" src="components/gallery/gallery.js"></script>';
+$scripts = '<script type="text/javascript" src="components/gallery/gallery.js"></script>
+<script type="text/javascript" src="components/gallery/jquery.colorbox.js"></script>';
 
 include("includes/header.php");
 ?>

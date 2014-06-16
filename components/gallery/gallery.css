@@ -24,3 +24,38 @@
 #gallery-area .hvr{display:block;position:absolute;left:0;top:100%;width:100%;height:100%;line-height:100%;vertical-align:middle;background:#5eb8e2 url('images/zoom.png') no-repeat center center;}
 #gallery-area a:hover .hvr{top:0;}
 #gallery-area p{margin:0 1% 20px 1%;}
+
+
+/*--- COLORBOX ---*/
+/* Core Styles */
+#colorbox, #cboxOverlay, #cboxWrapper{position:absolute; top:0; left:0; z-index:9999; overflow:hidden;outline:none;}
+#cboxOverlay{position:fixed; width:100%; height:100%;}
+#cboxMiddleLeft, #cboxBottomLeft{clear:left;}
+#cboxContent{position:relative;}
+#cboxLoadedContent{overflow:auto;}
+#cboxTitle{margin:0;}
+#cboxLoadingOverlay, #cboxLoadingGraphic{position:absolute; top:0; left:0; width:100%; height:100%;}
+#cboxPrevious, #cboxNext, #cboxClose, #cboxSlideshow{cursor:pointer;}
+.cboxPhoto{float:left; margin:auto; border:0; display:block; max-width:none;}
+.cboxIframe{width:100%; height:100%; display:block; border:0;}
+#colorbox, #cboxContent, #cboxLoadedContent{box-sizing:content-box; -moz-box-sizing:content-box; -webkit-box-sizing:content-box;}
+/* User Styles */
+#cboxOverlay{background:#000;}
+#colorbox{max-width:100% !important;}
+#cboxWrapper{}
+#cboxContent{margin-top:30px;background:#333;/*corners*/border-radius:0;}
+.cboxIframe{background:#fff;}
+#cboxError{padding:50px; border:1px solid #ccc;}
+#cboxLoadedContent{background:#fff;}
+#cboxTitle{position:absolute; top:-30px; left:0; color:#ccc;}
+#cboxCurrent{position:absolute; top:-30px; right:0px; color:#ccc;}
+#cboxSlideshow{position:absolute; top:-30px; right:90px; color:#fff;}
+#cboxPrevious{position:absolute; top:50%; left:0; margin-top:-32px; padding:0; border:none; background:url(images/sprite-colorbox.png) no-repeat center -60px; width:28px; height:50px; text-indent:-9999px;}
+#cboxPrevious:hover{background-position:center -110px;}
+#cboxNext{position:absolute; top:50%; right:0; margin-top:-32px; padding:0; border:none; background:url(images/sprite-colorbox.png) no-repeat center -160px; width:28px; height:50px; text-indent:-9999px;}
+#cboxNext:hover{background-position:center -210px;}
+#cboxLoadingOverlay{background:#000;}
+#cboxLoadingGraphic{background:url(images/loading.gif) no-repeat center center;}
+#cboxClose{position:absolute; top:15px; right:12px; display:block; border:none; background:url(images/sprite-colorbox.png) no-repeat center top; width:30px; height:16px; text-indent:-9999px;}
+#cboxClose:hover{background-position:center -30px;}
+#colorbox iframe{margin:0;}

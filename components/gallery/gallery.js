@@ -3,6 +3,13 @@ $(function(){
 		
 	// Init - Dynamic Gallery
 	dynamicGallery();
+
+	// Init - Colorbox: YouTube, JPEGs, Pages 
+	$('a.modal-img').colorbox({opacity:0.8, maxWidth:'100%', scalePhotos:true});
+	$('a.modal-vid').colorbox({iframe:true, innerWidth:640, innerHeight:390 });
+	$('a.modal').colorbox({iframe:true, innerWidth:500, innerHeight:600});
+	$('a[href$=".jpg"]').colorbox({opacity:0.7});
+	$('.modal').colorbox({ href: function(){ return $(this).attr('href') + " #modal-content";}, maxWidth:'100%', title:'' });
 	
 });
 
