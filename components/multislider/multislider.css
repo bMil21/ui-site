@@ -15,11 +15,11 @@
 .multi-slider .slides > li{width:250px;text-align:center;}
 
 @media screen and (max-width : 1060px) {
-.multi-slider{width:750px;
+	.multi-slider{width:750px;}
 }
 @media screen and (max-width : 810px) {
-.multi-slider{width:500px;}
+	.multi-slider{width:500px;}
 }
 @media screen and (max-width : 560px) {
-.multi-slider{width:250px;}
+	.multi-slider{width:250px;}
 }
