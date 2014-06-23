@@ -9,7 +9,7 @@ $(function(){
 });
 
 /*!
-* reSlider v1.3
+* reSlider v1.4
 * Copyright (c) 2013 Brandon Miller
 * Dual licensed under the MIT and GPL licenses:
 * http://www.opensource.org/licenses/mit-license.php
@@ -84,7 +84,7 @@ $(function(){
 				var $prev = $sliderWrap.find(".prev"),
 					$next = $sliderWrap.find(".next");
 				$prev.on("click", function(){
-					if (! $slider.is(':animated')) { // prevent over clicking
+					if (! $slider.is(':animated') && ! $sliderItems.is(':animated')) { // prevent over clicking
 						num = num - 2;
 						goToPrevious = true;
 						plugin.delayTimer("clear");
@@ -92,7 +92,7 @@ $(function(){
 					}
 				});
 				$next.on("click", function(){
-					if (! $slider.is(':animated')) { // prevent over clicking
+					if (! $slider.is(':animated') && ! $sliderItems.is(':animated')) { // prevent over clicking
 						plugin.delayTimer("clear");
 						settings.animation();
 					}
