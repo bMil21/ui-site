@@ -4,12 +4,12 @@ $(function(){
 	// Init - reSlider
 	// - Slider Defaults: { speed:500, delay:9000, animation:"fade", buildBulletNav:true, buildDirNav:true, autoPlay:true }
 	// - Animation can be either "fade", "slide", or "carousel"
-	$('#slider1').reSlider({animation:'slide', delay:3000});
+	$('#slider1').reSlider({animation:'slide', delay:3000, pause:false});
 	
 });
 
 /*!
-* reSlider v1.4
+* reSlider v1.5
 * Copyright (c) 2013 Brandon Miller
 * Dual licensed under the MIT and GPL licenses:
 * http://www.opensource.org/licenses/mit-license.php
@@ -39,7 +39,8 @@ $(function(){
 			buildBulletNav: true,
 			buildDirNav: true,
 			buildThumbNav: false,
-			autoPlay: true
+			autoPlay: true,
+			pause: true
 		};
 		// Combine Defaults and Options into Settings
 		var settings = $.extend({}, defaults, options);
@@ -295,7 +296,7 @@ $(function(){
 				if (settings.buildThumbNav) plugin.buildThumbNav();
 				// Start
 				plugin.animControl();
-				plugin.pauseSlider();
+				if (settings.pause) plugin.pauseSlider();
 			}
 		};
 		// START IT ALL

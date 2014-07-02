@@ -14,7 +14,7 @@ $body_class = array(
 );
 // load page styles/scripts
 $css = '<link type="text/css" rel="stylesheet" href="components/reslider/reslider.css" />';
-$scripts = '<script type="text/javascript" src="components/reslider/reslider.min.js"></script>';
+$scripts = '<script type="text/javascript" src="components/reslider/reslider.js"></script>';
 
 include("includes/header.php");
 ?>
