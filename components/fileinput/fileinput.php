@@ -1,1 +1,1 @@
-<input class="fileinput" type="file" id="form_resume" name="form_resume" />
+<input class="fileinput" type="file" id="form_resume" name="form_resume" data-fi-btn="Browse" data-fi-txtph="Upload PDF" />

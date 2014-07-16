@@ -9,7 +9,7 @@ $(function(){
 
 /*!
 	* fileInput
-	* Copyright (c) 2013 Brandon Miller
+	* Copyright (c) 2014 Brandon Miller
 	* Dual licensed under the MIT and GPL licenses:
 	* http://www.opensource.org/licenses/mit-license.php
 	* http://www.gnu.org/licenses/gpl.html
@@ -20,6 +20,14 @@ $(function(){
 			// Variables
 			var $input = $(this),
 				isIE = window.navigator.appName == 'Microsoft Internet Explorer';
+
+			// Defaults
+			var defaults = {
+				btnTxt: $input.attr("data-fi-btn") || "Select File",
+				txtPlaceholder: $input.attr("data-fi-txtph") || ""
+			};
+			// Combine Defaults and Options into Settings
+			var settings = $.extend({}, defaults, options);
 					
 			var plugin = {
 
@@ -29,12 +37,12 @@ $(function(){
 						return '<div class="fileinput-wrap">' +
 							'<div class="fileinput-btn">' +
 								'<div class="fileinput-btnblock">' +
-									'<span class="fileinput-btntxt">Select File</span>' +
+									'<span class="fileinput-btntxt">' + settings.btnTxt + '</span>' +
 								'</div>' +
 							'</div>' +
 							'<div class="fileinput-remove">&nbsp; &times &nbsp;</div>' +
 							'<div class="fileinput-txtfield">' +
-								'<span class="fileinput-filename"><span class="fi-icon"></span>&nbsp;<span class="fi-txt"></span></span>' +
+								'<span class="fileinput-filename"><span class="fi-icon"></span>&nbsp;<span class="fi-txt">' + settings.txtPlaceholder + '</span></span>' +
 							'</div>' +
 						'</div>';
 					});
@@ -50,10 +58,10 @@ $(function(){
 						var $this = $(this),
 							$filenameTxt = $this.closest(".fileinput-wrap").find(".fi-txt"),
 							$fileInput = $this.closest(".fileinput-wrap").find(".fileinput");
-						$filenameTxt.html("");
+						$filenameTxt.html(settings.txtPlaceholder);
 						//ie8+ doesn't support changing the value of input with type=file so clone instead
 						if (isIE) { 
-						var inputClone = $fileInput.clone(true);
+							var inputClone = $fileInput.clone(true);
 							$fileInput.after(inputClone);
 							$fileInput.remove();
 							$fileInput = inputClone;
