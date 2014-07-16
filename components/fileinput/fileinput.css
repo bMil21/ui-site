@@ -1,0 +1,12 @@
+/*------- File Input -------*/
+.fileinput-wrap{display:table; overflow:hidden; max-width:100%; border-radius:5px 0 0 5px;}
+	.fileinput-btn{display:table-cell; width:1%; white-space:nowrap; color:#555; background-color:#ccc; cursor:pointer; vertical-align: middle; border-right:1px solid #aaa;}
+	.fileinput-btn:hover{background-color:#c3c3c3;}
+		.fileinput-btnblock{display:block; padding:15px 15px; position:relative;}
+			.fileinput-wrap .fileinput{position:absolute; left:0; top:0; width:100%; height:100%; padding:0; margin:0; background:none; direction:ltr; cursor:pointer; opacity:0;-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=00)";}
+			.fileinput-btntxt{display: inline-block; font-size:16px;}
+	.fileinput-remove{display:none; width:1%; white-space:nowrap; font-size:24px; line-height:24px; color:#555; background-color:#ccc; cursor:pointer; vertical-align: middle; border-right:1px solid #aaa;}
+	.fileinput-remove:hover{background-color:#c3c3c3;}
+	.fileinput-txtfield{display:table-cell; width:100%; padding:10px; background:#f3f3f3; cursor:not-allowed; vertical-align: middle;}
+		.fileinput-filename{font-size:15px;}
+		.fileinput-filename .icon{}

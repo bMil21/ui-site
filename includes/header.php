@@ -29,6 +29,7 @@
                 <li><a href="googlemap.php" title="Google Map Helper">Google Map Helper</a></li>
                 <li><a href="equalheights.php" title="Equal Heights">Equal Heights</a></li>
                 <li><a href="filterit.php" title="Filter It">Filter It</a></li>
+                <li><a href="fileinput.php" title="File Input">File Input</a></li>
             </ul>
         </div>
     </header><!-- END #header -->
