@@ -8,7 +8,7 @@
 			<section class="sett-usage sett-sect">
 				<h2 class="settings-title">HTML</h2>
 				<pre class="mycode"><code>
-&lt;input class=&quot;fileinput&quot; type=&quot;file&quot; id=&quot;form_resume&quot; name=&quot;form_resume&quot; /&gt;
+&lt;input class=&quot;fileinput&quot; type=&quot;file&quot; id=&quot;form_resume&quot; name=&quot;form_resume&quot; data-fi-btn=&quot;Browse&quot; data-fi-txtph=&quot;Upload PDF&quot; /&gt;
 				</code></pre>
 			</section>
 
