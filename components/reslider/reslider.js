@@ -9,11 +9,11 @@ $(function(){
 });
 
 /*!
-* reSlider v1.6
-* Copyright (c) 2013 Brandon Miller
-* Dual licensed under the MIT and GPL licenses:
-* http://www.opensource.org/licenses/mit-license.php
-* http://www.gnu.org/licenses/gpl.html
+	* reSlider v1.6
+	* Copyright (c) 2014 Brandon Miller
+	* Dual licensed under the MIT and GPL licenses:
+	* http://www.opensource.org/licenses/mit-license.php
+	* http://www.gnu.org/licenses/gpl.html
 **/
 (function($){
 	$.fn.reSlider = function(options) {
