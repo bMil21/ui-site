@@ -6,6 +6,7 @@
 		</li>
 		<li>
 			<h2>This is Slide #2</h2>
+			<h2>This is Slide #2</h2>
 		</li>
 		<li>
 			<h2>This is Slide #3</h2>

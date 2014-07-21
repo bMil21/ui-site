@@ -4,12 +4,12 @@ $(function(){
 	// Init - reSlider
 	// - Slider Defaults: { speed:500, delay:9000, animation:"fade", buildBulletNav:true, buildDirNav:true, autoPlay:true }
 	// - Animation can be either "fade", "slide", or "carousel"
-	$('#slider1').reSlider({animation:'slide', delay:3000, pause:false});
+	$('#slider1').reSlider({ animation:'fade', delay:3000, pause:false, heightAdjust:true });
 	
 });
 
 /*!
-* reSlider v1.5
+* reSlider v1.6
 * Copyright (c) 2013 Brandon Miller
 * Dual licensed under the MIT and GPL licenses:
 * http://www.opensource.org/licenses/mit-license.php
@@ -19,6 +19,7 @@ $(function(){
 	$.fn.reSlider = function(options) {
 		// Variables
 		var $sliderWrap = $(this),
+			$sliderInner = '',
 			$slider = $sliderWrap.find(".reslider"),
 			$sliderItems = $sliderWrap.find(".reslider > li"),
 			slideLen = $sliderItems.length,
@@ -40,7 +41,8 @@ $(function(){
 			buildDirNav: true,
 			buildThumbNav: false,
 			autoPlay: true,
-			pause: true
+			pause: true,
+			heightAdjust: false
 		};
 		// Combine Defaults and Options into Settings
 		var settings = $.extend({}, defaults, options);
@@ -132,6 +134,14 @@ $(function(){
 					$(this).outerWidth(slideWidth +"%");
 				});
 			},
+
+			// Height Adjuster
+			heightAdjuster: function() {
+				var curHeight = $nxtSlide.height();
+				$sliderInner.animate({
+					"height": curHeight
+				});
+			},
 			
 			// Order Nav
 			orderNav: function() {
@@ -212,7 +222,6 @@ $(function(){
 				num++;
 				// If bulletNav NOT Clicked
 				if (!bulletNavClicked) {
-					//$curSlide = (num < 0) ? $($sliderItems[slideLen - 1]) : $($sliderItems[num]); 
 					if (num === (slideLen - 1)) { // if last slide
 						$curSlide = $($sliderItems[num]);
 						$nxtSlide = $($sliderItems[0]);
@@ -221,12 +230,13 @@ $(function(){
 						$curSlide = $($sliderItems[0]);
 						$nxtSlide = $($sliderItems[slideLen - 1]);
 						num = slideLen - 2;
-					} else {
-						// 
+					} else { // Default
 						$curSlide = (goToPrevious) ? $($sliderItems[num + 2]) : $($sliderItems[num]);
 						$nxtSlide = $($sliderItems[num + 1]);
 					}
 				}
+				// If Enabled.. Adjust Height for slides with a lot or a little content
+				if (settings.heightAdjust) plugin.heightAdjuster();
 				// Fade Out Current, Fade In Next
 				$nxtSlide.show(0, function(){
 					$curSlide.fadeOut(settings.speed, function(){
@@ -290,6 +300,7 @@ $(function(){
 			// Init
 			init: function() {
 				$slider.wrap('<div class="reslider-inner"></div>');
+				$sliderInner = $sliderWrap.find(".reslider-inner");
 				if (slideLen < 2) return; // Don't do anything if there is only one item or no items.
 				if (settings.buildBulletNav) plugin.buildBulletNav();
 				if (settings.buildDirNav) plugin.buildDirNav();
