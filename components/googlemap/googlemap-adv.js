@@ -43,7 +43,7 @@ $(function(){
 
 
 /*!
-* gMapHelper Advanced v2.2
+* gMapHelper Advanced v2.3
 * https://github.com/bMil21/ui-site/tree/master/components/googlemap
 * Copyright (c) 2013 Brandon Miller
 * Dual licensed under the MIT and GPL licenses:
