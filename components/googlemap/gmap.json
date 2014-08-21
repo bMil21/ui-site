@@ -1,0 +1,19 @@
+{
+	"address": [
+		{ 
+			"itemName": "Work",
+			"itemAddress": [40.075210, -75.288226],
+			"itemInfoWindow": "<div class='info-window'><h2>Work</h2><p>1100 Hector Street</p><p>Conshohocken, PA 19428</p></div>"
+		}, 
+		{ 
+			"itemName": "Home",
+			"itemAddress": [40.1211770, -75.4015760],
+			"itemInfoWindow": "<div class='info-window'><h2>Home</h2><p>1100 Hector Street</p><p>Conshohocken, PA 19428</p></div>"
+		}, 	
+		{ 
+			"itemName": "Home Home",
+			"itemAddress": [39.817583, -76.981294],
+			"itemInfoWindow": "<div class='info-window'><h2>Home Home</h2><p>1100 Hector Street</p><p>Conshohocken, PA 19428</p></div>"
+		}
+	]
+}

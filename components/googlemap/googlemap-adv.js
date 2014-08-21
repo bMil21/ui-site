@@ -64,7 +64,7 @@ $(function(){
 			icon: "",
 			scrollwheel: false,
 			zoom: 14, 
-			address: "",
+			address: false,
 			mapType: "roadmap",
 			styles: false
 		};
@@ -213,13 +213,22 @@ $(function(){
 			// Start it all
 			init: function() {
 				if (typeof settings.address === "string") {
-					//console.log("String!");
+					// Address given as String
 					plugin.myGeocoder();
 				} else if (typeof settings.address === "object") {
-					//console.log("Object/Array");
+					// Address given as String
 					plugin.buildMapMulti();
 				} else {
-					alert("Use an address (string) or an array of Lat/Lng");
+					// Address not given (try to import JSON)
+					$.getJSON("gmap.json", function(data){
+						var jsonAddress = data.address;
+						settings.address = jsonAddress;
+						plugin.buildMapMulti();
+					}).fail(function(jqxhr, textStatus, error) {
+						alert("Please use a suitable address. Developers: check console for errors.")
+						var err = textStatus + ", " + error;
+						console.log( "JSON Fail. Request Failed: " + err );
+					});
 				}
 				// Call Door-to-Door
 				$("#get-dir").on("click", function() {
