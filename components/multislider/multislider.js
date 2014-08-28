@@ -7,12 +7,12 @@ $(function(){
 });
 
 /*!
-* multiSlider v1.2
-* https://github.com/bMil21/ui-site/tree/master/components/multislider
-* Copyright (c) 2013 Brandon Miller
-* Dual licensed under the MIT and GPL licenses:
-* http://www.opensource.org/licenses/mit-license.php
-* http://www.gnu.org/licenses/gpl.html
+	* multiSlider v1.2.1
+	* https://github.com/bMil21/ui-site/tree/master/components/multislider
+	* Copyright (c) 2013 Brandon Miller
+	* Dual licensed under the MIT and GPL licenses:
+	* http://www.opensource.org/licenses/mit-license.php
+	* http://www.gnu.org/licenses/gpl.html
 **/
 (function($){
 	$.fn.multiSlider = function(options) {
@@ -27,7 +27,7 @@ $(function(){
 			buildDirNav: true,
 			autoPlay: false,
 			delay: 5000,
-			minSlides: 4
+			slidesVisible: 4
 		};
 		// Combine Defaults and Options into Settings
 		var settings = $.extend({}, defaults, options);
@@ -116,7 +116,7 @@ $(function(){
 
 		// Init
 		calcWidths();
-		if (slideLen < settings.minSlides) {
+		if (slideLen < (settings.slidesVisible + 1)) {
 			$slidesWrap.css({"width": "auto", "max-width": slideWrapWidth});
 			return;
 		} else {
