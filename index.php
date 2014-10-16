@@ -29,6 +29,7 @@ include("includes/header.php");
 		<div class="cta-col"><a class="cta" href="equalheights.php" title="View Plugin"><span>Equal Heights</span></a></div>
 		<div class="cta-col"><a class="cta" href="filterit.php" title="View Plugin"><span>Filter It</span></a></div>
 		<div class="cta-col"><a class="cta" href="fileinput.php" title="View Plugin"><span>File Input</span></a></div>
+		<div class="cta-col"><a class="cta" href="tabs.php" title="View Plugin"><span>Tabs</span></a></div>
 
 	</div>
 <?php 
