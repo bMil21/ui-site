@@ -7,7 +7,7 @@
 	.js .tabs-content{overflow: hidden; height:0; position: relative;}
 		.js .tab-sct{position: absolute; top:0; left:0; width:100%;} 
 /* User Styles */
-.tabs-nav a{color:#0000ff;}
-.tabs-nav a:hover{color:#ff0000;}
-.tabs-nav .current a{color:#ff0000;}
+.tabs-nav a{display:block; padding:10 15px; color:#fff; font-weight:bold; background:#5eb8e2; cursor:pointer; border-radius:5px;}
+.tabs-nav a:hover{color:#fff; background:#333;}
+.tabs-nav .current a{color:#fff; background:#333;}
 .tab-sct{margin:0 0 30px 0;}
