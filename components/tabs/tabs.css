@@ -1,0 +1,13 @@
+/*------- Tabs -------*/
+.tabs-area{}
+	.tabs-nav{text-align:center; margin:0 0 30px 0;}
+		.tabs-nav li{display: inline-block; padding:0 15px;}
+		.tabs-nav a{display: block;}
+	.tabs-content{}
+	.js .tabs-content{overflow: hidden; height:0; position: relative;}
+		.js .tab-sct{position: absolute; top:0; left:0; width:100%;} 
+/* User Styles */
+.tabs-nav a{color:#0000ff;}
+.tabs-nav a:hover{color:#ff0000;}
+.tabs-nav .current a{color:#ff0000;}
+.tab-sct{margin:0 0 30px 0;}
