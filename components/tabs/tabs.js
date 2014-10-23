@@ -7,7 +7,7 @@ $(function(){
 });
 
 /*!
-	* myTabs
+	* myTabs v0.2
 	* Copyright (c) 2014 Brandon Miller
 	* Dual licensed under the MIT and GPL licenses:
 	* http://www.opensource.org/licenses/mit-license.php
@@ -47,6 +47,9 @@ $(function(){
 				if ($wrap.find(hash).hasClass('tab-sct')) {
 					$(".tabs-nav a[href='" + hash + "']").parent().addClass('current');
 					$hash.addClass('current');
+					$('html, body').animate({
+						scrollTop : $tabsNav.offset().top - 20
+					});
 				} else {
 					$tabsLi.eq(0).addClass('current');
 					$tabSct.eq(0).addClass('current');
