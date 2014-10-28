@@ -43,12 +43,12 @@ $(function(){
 
 
 /*!
-* gMapHelper Advanced v2.3
-* https://github.com/bMil21/ui-site/tree/master/components/googlemap
-* Copyright (c) 2013 Brandon Miller
-* Dual licensed under the MIT and GPL licenses:
-* http://www.opensource.org/licenses/mit-license.php
-* http://www.gnu.org/licenses/gpl.html
+	* gMapHelper Advanced v2.4
+	* https://github.com/bMil21/ui-site/tree/master/components/googlemap
+	* Copyright (c) 2013 Brandon Miller
+	* Dual licensed under the MIT and GPL licenses:
+	* http://www.opensource.org/licenses/mit-license.php
+	* http://www.gnu.org/licenses/gpl.html
 **/
 (function($){
 	$.fn.gMapHelper = function(options) {
@@ -66,7 +66,8 @@ $(function(){
 			zoom: 14, 
 			address: false,
 			mapType: "roadmap",
-			styles: false
+			styles: false,
+			addressInfoWindow: '' // Single Address
 		};
 		// Combine Defaults and Options into Settings
 		var settings = $.extend({}, defaults, options);
@@ -108,7 +109,7 @@ $(function(){
 				return myMapType;
 			}, 
 			
-			// Build Map with Settings
+			// Build Map with Settings (ONLY FOR A SINGLE ADDRESS)
 			buildMap: function() {
 				// Set Map Options
 				var map_options = {
@@ -119,6 +120,10 @@ $(function(){
 				}
 				// New Map Object.. w/ element and options
 				map = new google.maps.Map(mapEl, map_options);
+				// Info Window
+				infowindow = new google.maps.InfoWindow({
+					content: "Loading..."
+				});
 				// New Marker Object
 				marker = new google.maps.Marker({
 					position: settings.address,
@@ -126,6 +131,13 @@ $(function(){
 					title: 'Location Name',
 					icon: settings.icon
 				});
+				// Click event for Marker, Info Window
+				google.maps.event.addListener(marker, 'click', function(settings) {
+					return function() {
+						infowindow.setContent(settings.addressInfoWindow);
+						infowindow.open(map, this);
+					}
+				}(settings));
 				// Display Directions on Map
 				directionsDisplay.setMap(map);
 				// Display Directions List
@@ -134,7 +146,7 @@ $(function(){
 				plugin.addStyles();
 			}, 
 			
-			// Build Map with Settings
+			// Build Map with Settings (ONLY FOR MULTIPLE LOCATIONS)
 			buildMapMulti: function() {
 				var firstAddress = settings.address[0];
 				// Set Map Options
