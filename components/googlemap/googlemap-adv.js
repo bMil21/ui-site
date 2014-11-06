@@ -43,7 +43,7 @@ $(function(){
 
 
 /*!
-	* gMapHelper Advanced v2.4
+	* gMapHelper Advanced v2.5
 	* https://github.com/bMil21/ui-site/tree/master/components/googlemap
 	* Copyright (c) 2013 Brandon Miller
 	* Dual licensed under the MIT and GPL licenses:
@@ -251,6 +251,8 @@ $(function(){
 		}
 		
 		// Initialize Plugin when everything is Loaded
-		google.maps.event.addDomListener(window, 'load', plugin.init);
+		$(document).ready(function(){
+			plugin.init();
+		});
 	}
 })(jQuery);
