@@ -7,7 +7,7 @@ $(function(){
 });
 
 /*!
-* eqHeights v1.0
+* eqHeights v1.1
 * Author: Brandon Miller 2014
 * Inspired by: http://css-tricks.com/equal-height-blocks-in-rows/
 **/
@@ -64,6 +64,9 @@ $(function(){
 
 				// Items to Start
 				init: function(){
+					$(document).ready(function(){
+						plugin.blockLoop();
+					});
 					// Start once everything is loaded
 					$window.load(function() {
 						plugin.blockLoop();
