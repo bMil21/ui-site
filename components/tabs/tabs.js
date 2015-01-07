@@ -84,7 +84,7 @@ $(function(){
 						count++
 						var $this = $(this);
 						$this.css('height', ''); // calibrate height for resize
-						var setH = $this.height();
+						var setH = $this.outerHeight();
 						$this.data("height", setH);
 						// All items cached
 						if (count === tabSctLen) {
