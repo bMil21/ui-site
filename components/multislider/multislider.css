@@ -9,7 +9,7 @@
 .multi-slider .slides > li{display:block;float:left;}
 .multi-slider .slides img{max-width:100%;height:auto;}
 .multi-slider .multi-dirnav{text-align:center;margin:0;}
-.multi-slider .multi-dirlink{display:inline-block;width:30px;height:30px;line-height:30px;background:#5eb8e2;color:#fff;cursor:pointer;position:absolute;top:40%;right:100%;z-index:20;}
+.multi-slider .multi-dirlink{display:inline-block;width:30px;height:30px;line-height:30px;background:#5eb8e2;color:#fff;cursor:pointer;position:absolute;top:0;bottom:0;margin:auto;right:100%;z-index:20;}
 .multi-slider .next{left:100%;right:auto;}
 /* User */
 .multi-slider{width:1000px;margin:0 auto;}
