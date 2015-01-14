@@ -2,6 +2,7 @@
 
 /*-- multiSlider v1.0.5 --*/
 .multi-slider{position:relative;max-width:100%;}
+.multi-slider .gradient{position:absolute; right:45px; top:0; width:50px; height:100%; background:url("images/gradient-right-white.png") repeat-y right top; z-index:1;}
 .multi-inner{overflow:hidden;}
 .multi-slider .slides{overflow:hidden;padding:0;margin:0 auto;position:relative;width:1000%;}
 .multi-slider.not-enough .slides{width:auto;}
