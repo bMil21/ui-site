@@ -5,7 +5,7 @@
 			<?php 
 			for ($i = 0; $i < 7; $i++) {
 			?>
-			<li class="slide"><img src="images/ph-medium.png" width="230" height="230" alt="Placeholder" /></li>
+			<li class="slide"><img class="fluid-img" src="images/ph-medium.png" width="230" height="230" alt="Placeholder" /></li>
 			<?php 
 			}
 			?>
