@@ -1,5 +1,5 @@
 <!-- Google Map -->
-<div id="google-map"></div>
+<div id="google-map" class="gmap"></div>
 <label for="saddr">Enter in <span class="red">your address</span> to get door-to-door directions.</label>
 <p class="inline-submit clearfix">
 	<input type="text" name="saddr" id="saddr" value="" placeholder="12 Main St, City, State">
@@ -14,7 +14,7 @@
 
 <!-- Google Map -->
 <h2 class="sect-title">Google Map Helper - Multiple Locations</h2>
-<div id="google-map-adv"></div>
+<div id="google-map-adv" class="gmap"></div>
 <!-- END Google Map -->
 
 <!-- GOOGLE MAPS API - (include in footer of specific page) -->

@@ -1,6 +1,11 @@
-@charset "UTF-8";
+/*------- Google Map -------*/
 
-/*------- GOOGLE MAP HELPER -------*/
-#google-map, #google-map-adv{height:360px;margin:0 0 50px 0;border:5px solid #E0E781;}
+.gmap{display: block; height:300px;}
 #dir-panel{margin:60px 0 0 0;}
 .adp-placemark td{padding:16px;background:#F0F5BB;}
+
+.info-window{display:block; width:200px; min-height:20px; color:#888;}
+	.info-window h2{margin:0 0 8px 0; font-size:16px; line-height:20px; @include font1-bold();}
+	.info-window p{font-size:13px; line-height:18px;}
+/* User */
+#google-map, #google-map-adv{height:360px;margin:0 0 50px 0;border:5px solid #E0E781;}
