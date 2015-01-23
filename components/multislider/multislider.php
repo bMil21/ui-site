@@ -1,4 +1,4 @@
-<!-- MULTI-SPECIALS SLIDER -->
+<!-- Multi-Slider -->
 <div id="multi-slider" class="multi-slider">
 	<div class="multi-inner">
 		<ul class="slides">
@@ -12,3 +12,4 @@
 		</ul>
 	</div>
 </div>
+<!-- END .multi-slider -->
