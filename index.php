@@ -22,14 +22,16 @@ include("includes/header.php");
 		
 		<!-- CTAs -->
 		<h1 class="sect-title">Select a UI Feature</h1>
-		<div class="cta-col"><a class="cta" href="reslider.php" title="View Plugin"><span>reSlider</span></a></div>
-		<div class="cta-col"><a class="cta" href="gallery.php" title="View Plugin"><span>Gallery</span></a></div>
-		<div class="cta-col"><a class="cta" href="multislider.php" title="View Plugin"><span>Multi-Slider</span></a></div>
-		<div class="cta-col"><a class="cta" href="googlemap.php" title="View Plugin"><span>Google Map Helper</span></a></div>
-		<div class="cta-col"><a class="cta" href="equalheights.php" title="View Plugin"><span>Equal Heights</span></a></div>
-		<div class="cta-col"><a class="cta" href="filterit.php" title="View Plugin"><span>Filter It</span></a></div>
-		<div class="cta-col"><a class="cta" href="fileinput.php" title="View Plugin"><span>File Input</span></a></div>
-		<div class="cta-col"><a class="cta" href="tabs.php" title="View Plugin"><span>Tabs</span></a></div>
+		<div class="col-wrap clearfix">
+			<div class="cta-col"><a class="cta" href="reslider.php" title="View Plugin"><span>reSlider</span></a></div>
+			<div class="cta-col"><a class="cta" href="gallery.php" title="View Plugin"><span>Gallery</span></a></div>
+			<div class="cta-col"><a class="cta" href="multislider.php" title="View Plugin"><span>Multi-Slider</span></a></div>
+			<div class="cta-col"><a class="cta" href="googlemap.php" title="View Plugin"><span>Google Map Helper</span></a></div>
+			<div class="cta-col"><a class="cta" href="equalheights.php" title="View Plugin"><span>Equal Heights</span></a></div>
+			<div class="cta-col"><a class="cta" href="filterit.php" title="View Plugin"><span>Filter It</span></a></div>
+			<div class="cta-col"><a class="cta" href="fileinput.php" title="View Plugin"><span>File Input</span></a></div>
+			<div class="cta-col"><a class="cta" href="tabs.php" title="View Plugin"><span>Tabs</span></a></div>
+		</div>
 
 	</div>
 <?php 
