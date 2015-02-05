@@ -31,6 +31,7 @@
 				<li><a href="filterit.php" title="Filter It">Filter It</a></li>
 				<li><a href="fileinput.php" title="File Input">File Input</a></li>
 				<li><a href="tabs.php" title="Tabs">Tabs</a></li>
+				<li><a href="forms.php" title="Form Fields">Form Fields</a></li>
 			</ul>
 		</div>
 	</header><!-- END #header -->
