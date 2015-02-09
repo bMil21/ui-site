@@ -13,8 +13,10 @@ $body_class = array(
 	"layout" => ""
 );
 // load page styles/scripts
-$css = '<link type="text/css" rel="stylesheet" href="components/forms/forms.css" />';
-$scripts = '<script type="text/javascript" src="components/forms/forms.js"></script>';
+$css = '<link type="text/css" rel="stylesheet" href="components/forms/forms.css" />' . 
+	'<link type="text/css" rel="stylesheet" href="components/labelhint/labelhint.css" />';
+$scripts = '<script type="text/javascript" src="components/forms/forms.js"></script>' .
+	'<script type="text/javascript" src="components/labelhint/labelhint.js"></script>';
 
 include("includes/header.php");
 ?>
