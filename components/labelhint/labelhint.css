@@ -1,0 +1,11 @@
+
+/*------- Label Hint / Label Mini -------*/
+.lbl-mini label{font-size:11px;margin:7px 0 2px 0; color:#bbb; /*transition*/-webkit-transition:all ease .3s;-moz-transition:all ease .3s;transition:all ease .3s;}
+.lbl-mini input, .lbl-mini textarea, .lbl-mini select{margin:0;}
+
+.js .lbl-hint label{position:relative;top:5px; opacity:0;}
+.lbl-hint label.on{color:#5eb8e2;}
+.lbl-hint label.show{top:0; opacity:1;}
+
+/* IE Label Hint */
+.lt-ie10 .lbl-hint label{opacity:1; top:0; font-weight:normal; font-size:14px;}
