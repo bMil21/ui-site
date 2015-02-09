@@ -32,6 +32,7 @@
 				<li><a href="fileinput.php" title="File Input">File Input</a></li>
 				<li><a href="tabs.php" title="Tabs">Tabs</a></li>
 				<li><a href="forms.php" title="Form Fields">Form Fields</a></li>
+				<li><a href="labelhint.php" title="Label Hint">Label Hint</a></li>
 			</ul>
 		</div>
 	</header><!-- END #header -->
