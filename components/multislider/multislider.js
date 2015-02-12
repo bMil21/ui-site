@@ -7,7 +7,7 @@ $(function(){
 });
 
 /*!
-	* multiSlider v1.2.1
+	* multiSlider v1.2.2
 	* https://github.com/bMil21/ui-site/tree/master/components/multislider
 	* Copyright (c) 2013 Brandon Miller
 	* Dual licensed under the MIT and GPL licenses:
@@ -118,6 +118,7 @@ $(function(){
 		calcWidths();
 		if (slideLen < (settings.slidesVisible + 1)) {
 			$slidesWrap.css({"width": "auto", "max-width": slideWrapWidth});
+			$slider.addClass('below-min');
 			return;
 		} else {
 			theDirNav();
