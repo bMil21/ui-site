@@ -3,13 +3,13 @@
 
 // page vars
 $page_meta = array(
-	"title" => "Form Fields | UI Site",
+	"title" => "Label Hint | UI Site",
 	"keywords" => "",
 	"description" => ""
 );
 $body_class = array(
-	"page" => "pg_reslider",
-	"site_section" => "sct_reslider",
+	"page" => "pg_labelhint",
+	"site_section" => "sct_labelhint",
 	"layout" => ""
 );
 // load page styles/scripts
@@ -20,7 +20,7 @@ include("includes/header.php");
 ?>
 	<div class="wrap">
 		<div class="zip"><a href="https://github.com/bMil21/ui-site/tree/master/components/labelhint" title="Download Files" target="_blank">Download Files</a></div> 
-		<h1 class="sect-title">Form Fields</h1>
+		<h1 class="sect-title">Label Hint</h1>
 
 		<?php 
 		include("components/labelhint/labelhint.php");

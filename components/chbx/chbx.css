@@ -1,0 +1,13 @@
+/*------- Custom Checkbox -------*/
+.js .custom-chbx{opacity:0; position: absolute; left:0; top:0; width:100%; height:100%; margin:0; cursor: pointer;}
+.custom-chbx-lbl{margin:0 0 5px 0; cursor: pointer;}
+.chbx-wrap{display:inline-block; position: relative;}
+	.chbx-btn{}
+		.chbx-icon{}
+		.chbx-txt{}
+/* User */
+.custom-chbx-lbl{font-size:14px; line-height:16px; font-weight:normal; font-family:"Open Sans Semibold", Helvetica, Arial, sans-serif;}
+.chbx-btn{width:60px; padding:5px 0; margin:0 5px 0 0; text-align: center; text-transform: uppercase; font-size:12px; background:#aaa; color:#fff;}
+.chbx-wrap:hover .chbx-btn{background:#999;}
+.on .chbx-btn{background:#5eb8e2;}
+.on.chbx-wrap:hover .chbx-btn{background:#3489B3;}

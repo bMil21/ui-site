@@ -8,8 +8,8 @@ $page_meta = array(
 	"description" => ""
 );
 $body_class = array(
-	"page" => "pg_reslider",
-	"site_section" => "sct_reslider",
+	"page" => "pg_forms",
+	"site_section" => "sct_forms",
 	"layout" => ""
 );
 // load page styles/scripts

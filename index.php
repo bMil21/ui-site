@@ -33,6 +33,7 @@ include("includes/header.php");
 			<div class="cta-col"><a class="cta" href="tabs.php" title="View Plugin"><span>Tabs</span></a></div>
 			<div class="cta-col"><a class="cta" href="forms.php" title="View Plugin"><span>Form Fields</span></a></div>
 			<div class="cta-col"><a class="cta" href="labelhint.php" title="View Plugin"><span>Label Hint</span></a></div>
+			<div class="cta-col"><a class="cta" href="chbx.php" title="View Plugin"><span>Checkbox</span></a></div>
 		</div>
 
 	</div>

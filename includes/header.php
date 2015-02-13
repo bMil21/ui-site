@@ -33,6 +33,7 @@
 				<li><a href="tabs.php" title="Tabs">Tabs</a></li>
 				<li><a href="forms.php" title="Form Fields">Form Fields</a></li>
 				<li><a href="labelhint.php" title="Label Hint">Label Hint</a></li>
+				<li><a href="chbx.php" title="Checkbox">Checkbox</a></li>
 			</ul>
 		</div>
 	</header><!-- END #header -->
