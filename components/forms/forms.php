@@ -1,5 +1,9 @@
 <!-- Form Fields -->
+<<<<<<< Updated upstream
 <form id="default_form" class="col-wrap" action="thankyou.php" method="post">
+=======
+<form id="default_form" action="#" method="post">
+>>>>>>> Stashed changes
 	<ul>
 		<li class="lbl-hint lbl-mini">
 			<label for="form_fname">First Name*</label>
@@ -14,6 +18,7 @@
 			<input type="tel" id="form_phone" name="form_phone" placeholder="Phone">
 		</li>
 		<li class="lbl-hint lbl-mini">
+<<<<<<< Updated upstream
 			<label for="form_street">Street Address</label>
 			<input type="text" id="form_street" name="form_street" placeholder="Street Address">
 		</li>
@@ -93,11 +98,22 @@
 			<div class="radio-wrap lbl-block">
 				<label class="radio" for="form_parent"><input type="radio" id="form_parent" name="form_parent" REQUIRED> Parent</label>
 				<label class="radio" for="form_student"><input type="radio" id="form_student" name="form_parent" REQUIRED> Student</label>
+=======
+			<label for="form_dob">Date of Birth*</label>
+			<input type="text" id="form_dob" name="form_dob" placeholder="Date of Birth*" REQUIRED>
+		</li>
+		<li class="inline">
+			<label for="form_">Do you like this form?*</label>
+			<div class="radio-wrap lbl-block">
+				<label class="radio" for="form_yes"><input type="radio" id="form_yes" name="form_yesno" REQUIRED> Yes</label>
+				<label class="radio" for="form_no"><input type="radio" id="form_no" name="form_yesno" REQUIRED> No</label>
+>>>>>>> Stashed changes
 			</div>
 		</li>
 		<li class="inline">
 			<label for="form_">What programs are you interested in?</label>
 			<div class="chbx-wrap lbl-block">
+<<<<<<< Updated upstream
 				<label class="chbx" for="form_prgm_tennis"><input type="checkbox" id="form_prgm_tennis" name="form_prgm_tennis"> Tennis</label>
 				<label class="chbx" for="form_prgm_golf"><input type="checkbox" id="form_prgm_golf" name="form_prgm_golf"> Golf</label>
 				<label class="chbx" for="form_prgm_enrichment"><input type="checkbox" id="form_prgm_enrichment" name="form_prgm_enrichment"> Enrichment for High School Students</label>
@@ -122,10 +138,32 @@
 				<label class="radio" for="form_mail"><input type="radio" id="form_mail" name="form_contact" REQUIRED> Mail</label>
 				<label class="radio" for="form_phone"><input type="radio" id="form_phone" name="form_contact" REQUIRED> Phone</label>
 			</div>
+=======
+				<label class="chbx" for="form_basketball"><input type="checkbox" id="form_basketball" name="form_basketball"> Basketball</label>
+				<label class="chbx" for="form_football"><input type="checkbox" id="form_football" name="form_football"> Football</label>
+				<label class="chbx" for="form_soccer"><input type="checkbox" id="form_soccer" name="form_soccer"> Soccer</label>
+			</div>
+		</li>
+		<li class="lbl-hint lbl-mini">
+			<label for="form_street">Street Address</label>
+			<input type="text" id="form_street" name="form_street" placeholder="Street Address">
+		</li>
+		<li class="lbl-hint lbl-mini col2-3 field-col">
+			<label for="form_city">City</label>
+			<input type="text" id="form_city" name="form_city" placeholder="City">
+		</li>
+		<li class="lbl-hint lbl-mini col1-3 field-col">
+			<label for="form_zip">Zip Code</label>
+			<input type="text" id="form_zip" name="form_zip" placeholder="Zip Code">
+>>>>>>> Stashed changes
 		</li>
 		<li>
 			<br>
 			<button type="submit" class="submit" id="form_submit" name="form_submit">Submit</button>
 		</li>
 	</ul>
+<<<<<<< Updated upstream
 </form>
+=======
+</form>
+>>>>>>> Stashed changes
