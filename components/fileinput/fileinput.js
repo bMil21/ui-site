@@ -8,7 +8,7 @@ $(function(){
 
 
 /*!
-	* fileInput
+	* fileInput v0.1
 	* Copyright (c) 2014 Brandon Miller
 	* Dual licensed under the MIT and GPL licenses:
 	* http://www.opensource.org/licenses/mit-license.php
@@ -20,6 +20,7 @@ $(function(){
 			// Variables
 			var $input = $(this),
 				isIE = window.navigator.appName == 'Microsoft Internet Explorer';
+			var $wrap, $fileRemove, $filenameTxt, $fileInput;
 
 			// Defaults
 			var defaults = {
@@ -48,16 +49,24 @@ $(function(){
 					});
 					$input.appendTo($input.next().find(".fileinput-btnblock"));
 					// Calls
+					plugin.elementVars();
+				},
+
+				// Setup Vars for new elements
+				elementVars: function() {
+					$wrap = $input.closest(".fileinput-wrap");
+					$fileRemove = $wrap.find(".fileinput-remove");
+					$filenameTxt = $wrap.find(".fi-txt");
+					$fileInput = $wrap.find(".fileinput");
+					// Calls
 					plugin.addFileName();
 					plugin.removeFiles();
 				},
 
 				// Remove Files
 				removeFiles: function() {
-					$(".fileinput-remove").on("click", function(){
-						var $this = $(this),
-							$filenameTxt = $this.closest(".fileinput-wrap").find(".fi-txt"),
-							$fileInput = $this.closest(".fileinput-wrap").find(".fileinput");
+					$fileRemove.on("click", function(){
+						var $this = $(this);
 						$filenameTxt.html(settings.txtPlaceholder);
 						//ie8+ doesn't support changing the value of input with type=file so clone instead
 						if (isIE) { 
@@ -76,9 +85,7 @@ $(function(){
 				addFileName: function() {
 					$input.on("change", function(){
 						var $this = $(this),
-							uploadedFile = $this.val().replace(/^.+\\/, ''),
-							$filenameTxt = $this.closest(".fileinput-wrap").find(".fi-txt"),
-							$fileRemove = $this.closest(".fileinput-wrap").find(".fileinput-remove");
+							uploadedFile = $this.val().replace(/^.+\\/, '');
 						$filenameTxt.html(uploadedFile);
 						if ($this.val() !== "") {
 							$fileRemove.css({"display": "table-cell"});
