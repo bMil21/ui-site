@@ -1,24 +1,23 @@
-@charset "UTF-8";
 
 /*------- reSLIDER -------*/
 .reslider-wrap{width:100%;margin:0 0 20px 0;position:relative;clear:both;}
-.reslider-inner{width:100%;overflow:hidden;}
-.reslider{width:100%;position:relative;margin:0;padding:0;overflow:hidden;}
-.reslider > li{float:left;width:100%;position:relative;margin:0 -100% 0 0;z-index:0;list-style:none;background:#E9F18B;/*boxsize*/-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;}
-.reslider li.current{z-index:10;}
-.reslider li.next{z-index:9;}
+	.reslider-inner{width:100%;overflow:hidden;}
+	.reslider{width:100%;position:relative;margin:0;padding:0;overflow:hidden;}
+		.reslider > li{float:left;width:100%;position:relative;margin:0 -100% 0 0;z-index:0;list-style:none;background:#E9F18B;/*boxsize*/-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;}
+		.reslider li.current{z-index:10;}
+		.reslider li.next{z-index:9;}
 /* In-BG Slider */
 .reslider-wrap.rs-inbg{position:absolute;left:0;top:0;z-index:0;} /* make sure other elements have higher z-indexes */
 /* Bullet Nav */
 .reslider-nav{text-align:center;margin:10px 0;}
-.reslider-nav .bullet-link{display:inline-block;padding:8px 14px;margin:0 5px;background-color:#5eb8e2;color:#fff;cursor:pointer;}
+	.reslider-nav .bullet-link{display:inline-block;padding:8px 14px;margin:0 5px;background-color:#5eb8e2;color:#fff;cursor:pointer;}
 /* Directional Nav */
 .dir-nav{text-align:center;margin:0;}
-.dir-nav .dir-link{display:inline-block;padding:8px 14px;margin:0;background:#5eb8e2;color:#fff;cursor:pointer;position:absolute;top:40%;left:0;z-index:20;}
-.dir-nav .next{left:auto;right:0;}
+	.dir-nav .dir-link{display:inline-block; position:absolute; top:0; bottom:0; left:0; height:40px; margin:auto; padding:0 15px; line-height:40px; background:#5eb8e2; color:#fff; cursor:pointer; z-index:20;}
+	.dir-nav .next{left:auto;right:0;}
 /* Thumb Nav */
 .thumb-nav{text-align:center;margin:10px 0;}
-.thumb-nav .thumb-link{display:inline-block;margin:0 10px;cursor:pointer;}
+	.thumb-nav .thumb-link{display:inline-block;margin:0 10px;cursor:pointer;}
 /* Slide Anim */
 .reslider-wrap.rs-slide li{margin:0;}
 /*--- User Styles ---*/
