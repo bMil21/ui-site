@@ -2,14 +2,14 @@
 $(function(){
 		
 	// Init - reSlider
-	// - Slider Defaults: { speed:500, delay:9000, animation:"fade", buildBulletNav:true, buildDirNav:true, autoPlay:true }
+	// - Slider Defaults: { speed:500, delay:9000, animation:"fade", buildBulletNav:true, buildDirNav:true, autoPlay:true, prevText: '&laquo;', nextText: '&raquo;' }
 	// - Animation can be either "fade", "slide", or "carousel"
 	$('#slider1').reSlider({ animation:'fade', delay:3000, pause:false, heightAdjust:true });
 	
 });
 
 /*!
-	* reSlider v1.7
+	* reSlider v1.8
 	* Copyright (c) 2014 Brandon Miller
 	* Dual licensed under the MIT and GPL licenses:
 	* http://www.opensource.org/licenses/mit-license.php
@@ -43,7 +43,9 @@ $(function(){
 				buildThumbNav: false,
 				autoPlay: true,
 				pause: true,
-				heightAdjust: false
+				heightAdjust: false,
+				prevText: "&laquo;",
+				nextText: "&raquo;"
 			};
 			// Combine Defaults and Options into Settings
 			var settings = $.extend({}, defaults, options);
@@ -84,7 +86,7 @@ $(function(){
 
 				// Build Directional Navigation
 				buildDirNav: function() {
-					$sliderWrap.append('<div class="dir-nav"><span class="dir-link prev">&laquo;</span> <span class="dir-link next">&raquo;</span></div>');
+					$sliderWrap.append('<div class="dir-nav"><span class="dir-link prev">'+ settings.prevText +'</span> <span class="dir-link next">'+ settings.nextText +'</span></div>');
 					var $prev = $sliderWrap.find(".prev"),
 						$next = $sliderWrap.find(".next");
 					$prev.on("click", function(){
