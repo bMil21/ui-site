@@ -4,8 +4,13 @@
 		.tabs-nav li{display: inline-block; padding:0 15px;}
 		.tabs-nav a{display: block;}
 	.tabs-content{}
+	/* Start - NO slide down 
+	.tabs-content{overflow: hidden; position: relative;}
+		.js .tab-sct{}
+	*/
+	/* Start - Slide down */
 	.js .tabs-content{overflow: hidden; height:0; position: relative;}
-		.js .tab-sct{position: absolute; top:0; left:0; width:100%;} 
+		.js .tab-sct{ position: absolute; top:0; left:0; width:100%;}
 /* User Styles */
 .tabs-nav a{display:block; padding:10px 15px; color:#fff; font-weight:bold; background:#5eb8e2; cursor:pointer; border-radius:5px;}
 .tabs-nav a:hover{color:#fff; background:#333;}
