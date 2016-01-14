@@ -7,7 +7,7 @@ $(function(){
 });
 
 /*!
-	* multiSlider v1.2.2
+	* multiSlider v1.2.3
 	* https://github.com/bMil21/ui-site/tree/master/components/multislider
 	* Copyright (c) 2013 Brandon Miller
 	* Dual licensed under the MIT and GPL licenses:
@@ -27,7 +27,9 @@ $(function(){
 			buildDirNav: true,
 			autoPlay: false,
 			delay: 5000,
-			slidesVisible: 4
+			slidesVisible: 4,
+			prevText: "&laquo;",
+			nextText: "&raquo;"
 		};
 		// Combine Defaults and Options into Settings
 		var settings = $.extend({}, defaults, options);
@@ -69,7 +71,7 @@ $(function(){
 		function theDirNav() {
 			if (settings.buildDirNav) {
 				// Add Navigation
-				$slider.append('<div class="multi-dirnav"><span class="multi-dirlink prev">&laquo;</span> <span class="multi-dirlink next">&raquo;</span></div>');
+				$slider.append('<div class="multi-dirnav"><span class="multi-dirlink prev">'+ settings.prevText +'</span> <span class="multi-dirlink next">'+ settings.nextText +'</span></div>');
 				var $nextBtn = $slider.find(".next"),
 					$prevBtn = $slider.find(".prev");
 				// Next Button
