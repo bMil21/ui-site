@@ -7,7 +7,7 @@ $(function(){
 });
 
 /*!
-	* multiSlider v1.2.3
+	* multiSlider v1.2.4
 	* https://github.com/bMil21/ui-site/tree/master/components/multislider
 	* Copyright (c) 2013 Brandon Miller
 	* Dual licensed under the MIT and GPL licenses:
@@ -22,6 +22,7 @@ $(function(){
 			$slide = $slider.find(".slide"),
 			slideLen = $slide.length,
 			slideWidth, slideWrapWidth, moveTimer;
+		var resizeTimer = setTimeout(function(){}, 0);
 		// Defaults
 		var defaults = {
 			buildDirNav: true,
@@ -29,7 +30,8 @@ $(function(){
 			delay: 5000,
 			slidesVisible: 4,
 			prevText: "&laquo;",
-			nextText: "&raquo;"
+			nextText: "&raquo;",
+			fixWidths: false
 		};
 		// Combine Defaults and Options into Settings
 		var settings = $.extend({}, defaults, options);
@@ -37,10 +39,13 @@ $(function(){
 		// Calculate Widths
 		function calcWidths() {
 			slideWrapWidth = 0;
+			var sliderWidth = $slider.width(),
+				indivSlideWidth = sliderWidth / settings.slidesVisible;
 			$slide.each(function( index ) {
-				slideWrapWidth += parseInt($(this).width(), 10);
+				if (settings.fixWidths) $(this).outerWidth(indivSlideWidth);
+				slideWrapWidth += parseInt($(this).outerWidth(), 10);
 			});
-			$slidesWrap.width(slideWrapWidth);
+			$slidesWrap.width(slideWrapWidth + 100);
 		}
 
 		// Update Slider Global (bc slides are constantly changing position)
@@ -97,6 +102,11 @@ $(function(){
 			}
 		}
 
+		// Remove Hide
+		function removeHide() {
+			$slider.removeClass('hide');
+		}
+
 		// Autoplay / Delay
 		function theTimer(){
 			if (settings.autoPlay) {
@@ -112,18 +122,23 @@ $(function(){
 		// Window Resize: recalc widths
 		function resizeCall() {
 			$(window).resize(function() {
-				calcWidths();
+				clearTimeout(resizeTimer);
+				resizeTimer = setTimeout(function(){
+					calcWidths();
+				}, 200);
 			});
 		}
 
 		// Init
-		calcWidths();
 		if (slideLen < (settings.slidesVisible + 1)) {
-			$slidesWrap.css({"width": "auto", "max-width": slideWrapWidth});
+			$slidesWrap.css({"width": "auto"});
 			$slider.addClass('below-min');
+			removeHide();
 			return;
 		} else {
+			calcWidths();
 			theDirNav();
+			removeHide();
 			theTimer();
 			resizeCall();
 		}
