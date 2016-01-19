@@ -7,8 +7,8 @@ $(function(){
 });
 
 /*!
-	* myTabs v0.2
-	* Copyright (c) 2014 Brandon Miller
+	* myTabs v1.0
+	* Copyright (c) 2016 Brandon Miller
 	* Dual licensed under the MIT and GPL licenses:
 	* http://www.opensource.org/licenses/mit-license.php
 	* http://www.gnu.org/licenses/gpl.html
@@ -19,7 +19,9 @@ $(function(){
 		return this.each(function() {
 			// Variables
 			var $wrap = $(this),
+				$tabsNavToggle = $wrap.find(".tabs-nav-toggle"),
 				$tabsNav = $wrap.find(".tabs-nav"),
+				$tabsUl = $tabsNav.find("ul"),
 				$tabsLi = $tabsNav.find("li"),
 				$tabsLink = $tabsNav.find("a"),
 				$tabsContent = $wrap.find(".tabs-content"),
@@ -29,7 +31,7 @@ $(function(){
 				count = 0,
 				animating = false,
 				shown = false,
-				resizeTimer;
+				resizeTimer, toggleTxt;
 			// Defaults
 			var defaults = {
 				optionName: "value"
@@ -61,6 +63,8 @@ $(function(){
 
 				// Show Current
 				showCurrent: function() {
+					toggleTxt = $tabsNav.find(".current").text();
+					plugin.updateToggleTxt();
 					$tabSct.hide();
 					$curSct.css('display', 'block');
 					setTimeout(function(){
@@ -121,6 +125,14 @@ $(function(){
 									});
 								});
 								$newLi.addClass("current");
+								// Update Nav Toggle Text
+								toggleTxt = $this.text();
+								plugin.updateToggleTxt();
+								// if nav toggle showing, slide up (mobile)
+								if ($tabsNavToggle.hasClass('active')) {
+									$tabsNavToggle.toggleClass('active');
+									$tabsUl.slideUp('fast');
+								}
 							}
 						}
 					});
@@ -144,9 +156,28 @@ $(function(){
 					});
 				},
 
+				// Tabs Nav Toggle
+				navToggle: function() {
+					$tabsNavToggle.on('click', function(e){
+						e.preventDefault();
+						if( $tabsNavToggle.hasClass('active') ) {
+							$tabsUl.slideUp('fast');
+						} else {
+							$tabsUl.slideDown('fast');
+						}
+						$tabsNavToggle.toggleClass('active');
+					});
+				},
+
+				// Tabs Nav Toggle
+				updateToggleTxt: function() {
+					$tabsNavToggle.text(toggleTxt);
+				},
+
 				// Plugin functions to initialize
 				init: function() {
 					plugin.tabClick();
+					plugin.navToggle();
 					if ($('.tabs-area').length > 0) {
 						plugin.tabTrigger();
 					}

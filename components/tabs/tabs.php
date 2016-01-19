@@ -9,6 +9,7 @@
 
 <!-- Tabs -->
 <section id="tabs1" class="tabs-area">
+	<div class="tabs-nav-toggle">Select Tab</div>
 	<nav class="tabs-nav">
 		<ul>
 			<li><a href="#sct-tab1" title="Tab 1">Tab 1</a></li>

@@ -1,5 +1,8 @@
-/*------- Tabs -------*/
+/*---------------------------------------
+	Tabs
+---------------------------------------*/
 .tabs-area{}
+	.tabs-nav-toggle{display: block; position: relative; text-align:center;}
 	.tabs-nav{text-align:center; margin:0 0 30px 0;}
 		.tabs-nav li{display: inline-block; padding:0 15px;}
 		.tabs-nav a{display: block;}
@@ -16,3 +19,13 @@
 .tabs-nav a:hover{color:#fff; background:#333;}
 .tabs-nav .current a{color:#fff; background:#333;}
 .tab-sct{margin:0 0 30px 0;}
+
+/*---  801+  ---*/
+@media screen and (min-width : 801px) {
+	.tabs-nav-toggle{display:none;}
+	.tabs-nav ul{display:block !important;}
+}
+/*---  800-  ---*/
+@media screen and (max-width : 800px) {
+	.tabs-nav ul{display:none; position: absolute; left:0; top:0; width:100%; z-index:1;}
+}
