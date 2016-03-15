@@ -2,7 +2,9 @@
 $(function(){
 	
 	// Init - eqHeights
-	$('.eqh-wrap').eqHeights({});
+	$(window).on('load', function(){
+		$('.eqh-wrap').eqHeights({});
+	});
 	
 });
 
@@ -64,13 +66,8 @@ $(function(){
 
 				// Items to Start
 				init: function(){
-					$(document).ready(function(){
-						plugin.blockLoop();
-					});
-					// Start once everything is loaded
-					$window.load(function() {
-						plugin.blockLoop();
-					});
+					// Start 
+					plugin.blockLoop();
 					// Restart when browser is resized
 					$window.resize(function(){
 						plugin.blockLoop();
