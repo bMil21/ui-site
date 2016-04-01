@@ -5,16 +5,24 @@ $(function(){
 	$(window).on('load', function(){
 		$('.eqh-wrap').eqHeights({});
 	});
+
+	// Reload eqHeights
+	// (outside of plugin)
+	$('button').on('click', function(){
+		var $wrap = $('.unique_name_of_eqh_wrap');
+		$wrap.eqHeights.forceReload($wrap);
+	});
 	
 });
 
 /*!
-* eqHeights v1.1
-* Author: Brandon Miller 2014
-* Inspired by: http://css-tricks.com/equal-height-blocks-in-rows/
-**/
+	* eqHeights v2.0
+	* Author: Brandon Miller 2014
+	* Inspired by: http://css-tricks.com/equal-height-blocks-in-rows/
+*/
 (function($){
 	$.fn.eqHeights = function(options) {
+		// this changes for each el / intialization
 		return this.each(function() {
 			// Variables
 			var $wrap = $(this),
@@ -64,6 +72,17 @@ $(function(){
 					});
 				},
 
+				// Update Vars
+				updateVars: function($newEl){
+					$wrap = $newEl;
+					$blocks = $wrap.find(".eqh");
+					$window = $(window);
+					currentTallest = 0;
+					currentRowStart = 0;
+					rowDivs = [];
+					topPosition = 0;
+				},
+
 				// Items to Start
 				init: function(){
 					// Start 
@@ -77,6 +96,12 @@ $(function(){
 			};
 			// START IT ALL
 			plugin.init();
+
+			// PUBLIC METHODS
+			$.fn.eqHeights.forceReload = function($newEl) {
+				plugin.updateVars($newEl);
+				plugin.blockLoop();
+			};
 		});
 	}
 })(jQuery);
