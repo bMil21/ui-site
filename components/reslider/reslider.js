@@ -9,7 +9,7 @@ $(function(){
 });
 
 /*!
-	* reSlider v1.8
+	* reSlider v1.9
 	* Copyright (c) 2014 Brandon Miller
 	* Dual licensed under the MIT and GPL licenses:
 	* http://www.opensource.org/licenses/mit-license.php
@@ -140,7 +140,7 @@ $(function(){
 
 				// Height Adjuster
 				heightAdjuster: function() {
-					var curHeight = $nxtSlide.height();
+					var curHeight = $nxtSlide.outerHeight();
 					$sliderInner.animate({
 						"height": curHeight
 					});
@@ -184,13 +184,19 @@ $(function(){
 						// if last slide... switch to first
 						if (num >= (slideLen - 3)) { 
 							$slider.css({ left:"-100%" }); // switch to first
+							$nxtSlide = $sliderItems.eq(1);
 							num = -1;
 						}
 						// if first slide (and going left)... switch to last
-						if (num < -1) { 
+						else if (num < -1) { 
 							$slider.css({ left:"-" + (slideLen - 2) + "00%" }); // switch to last
+							$nxtSlide = $sliderItems.eq(slideLen - 1);
 							num = slideLen - 4;
+						} else {
+							$nxtSlide = $sliderItems.eq(num + 2);
 						}
+						// If Enabled.. Adjust Height for slides with a lot or a little content
+						if (settings.heightAdjust) plugin.heightAdjuster();
 					});
 					plugin.delayTimer();
 				}, 
