@@ -1,9 +1,11 @@
 /*---------------------------------------
 	Tabs
 ---------------------------------------*/
-.tabs-area{}
-	.tabs-nav-toggle{display: block; position: relative; text-align:center;}
-	.tabs-nav{text-align:center; margin:0 0 30px 0;}
+.tabs-area{display: block;}
+	.tabs-nav-toggle{display: block; position: relative; text-align:center; cursor: pointer;}
+	.tabs-nav-toggle:after{content: ''; display: inline-block; margin: 0 0 0 8px; vertical-align: middle; border-top: 5px solid #0d0d0d; border-left: 5px solid transparent; border-right: 5px solid transparent;}
+	.tabs-nav-toggle.active:after {border-top: none; border-bottom: 5px solid #0d0d0d; }
+	.tabs-nav{display:block; position:relative; text-align:center; margin:0 0 30px 0;}
 		.tabs-nav li{display: inline-block; padding:0 15px;}
 		.tabs-nav a{display: block;}
 	.tabs-content{}
@@ -28,4 +30,5 @@
 /*---  800-  ---*/
 @media screen and (max-width : 800px) {
 	.tabs-nav ul{display:none; position: absolute; left:0; top:0; width:100%; z-index:1;}
+		.tabs-nav li{display: block; float: none;}
 }
