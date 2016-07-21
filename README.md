@@ -1,6 +1,6 @@
 UI Site
 =======
-Site displaying various common UI Features.
+Site displaying various common UI Features (plugins, etc.).
 
 ##Demo Site:
 - http://bmmdesign.com/ui-site/
