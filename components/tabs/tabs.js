@@ -7,7 +7,7 @@ $(function(){
 });
 
 /*!
-	* myTabs v1.2
+	* myTabs v1.3
 	* Copyright (c) 2016 Brandon Miller
 	* Dual licensed under the MIT and GPL licenses:
 	* http://www.opensource.org/licenses/mit-license.php
@@ -42,17 +42,19 @@ $(function(){
 			// Determine Current
 			var hash = window.location.hash,
 				$hash = $(hash);
-			if (hash === '' || hash === null || hash === undefined) {
-				$tabsLi.eq(0).addClass('current');
-				$tabSct.eq(0).addClass('current');
-			} else { // tab selected from previous page
-				if ($wrap.find(hash).hasClass('tab-sct')) {
-					$(".tabs-nav a[href='" + hash + "']").parent().addClass('current');
-					$hash.addClass('current');
-					$('html, body').animate({
-						scrollTop : $tabsNav.offset().top - 20
-					});
-				} else {
+			if ($wrap.find(hash).hasClass('tab-sct')) {
+				// use hash
+				$tabsLi.removeClass('current');
+				$tabSct.removeClass('current');
+				$(".tabs-nav a[href='" + hash + "']").parent().addClass('current');
+				$hash.addClass('current');
+				$('html, body').animate({
+					scrollTop : $tabsNav.offset().top - 20
+				});
+			} else {
+				// no hash
+				if (! $tabsLi.hasClass('current')) {
+					// no tab specified use first <li>
 					$tabsLi.eq(0).addClass('current');
 					$tabSct.eq(0).addClass('current');
 				}
