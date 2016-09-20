@@ -7,7 +7,7 @@ $(function(){
 });
 
 /*!
-	* myTabs v1.0
+	* myTabs v1.2
 	* Copyright (c) 2016 Brandon Miller
 	* Dual licensed under the MIT and GPL licenses:
 	* http://www.opensource.org/licenses/mit-license.php
@@ -85,7 +85,7 @@ $(function(){
 				// Cache Heights
 				cacheHeights: function() {
 					$wrap.find('.tab-sct').each(function(){
-						count++
+						count++;
 						var $this = $(this);
 						$this.css('height', ''); // calibrate height for resize
 						var setH = $this.outerHeight();
@@ -182,9 +182,7 @@ $(function(){
 						plugin.tabTrigger();
 					}
 					// Components Loaded.. cache heights
-					$(window).load(function(){
-						plugin.cacheHeights();
-					});
+					plugin.cacheHeights();
 					// Window Resize: adjust/show heights
 					$(window).resize(function(){
 						clearTimeout(resizeTimer);
@@ -196,6 +194,12 @@ $(function(){
 			};
 			// START IT ALL
 			plugin.init();
+
+			// PUBLIC METHODS
+			$.fn.myTabs.forceReload = function() {
+				count = 0;
+				plugin.cacheHeights();
+			};
 		});
 	}
 })(jQuery);
